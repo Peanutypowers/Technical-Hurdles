@@ -31,7 +31,7 @@ func create_board():
 		board.append([])
 		for c in range(board_size):
 			var tile = tile_scene.instantiate()
-			tile.set_position(Vector2(c * tile_size * 2.75, r * tile_size * 2.75))
+			tile.set_position(Vector2(540 + (c * tile_size * 2.75), 100 + (r * tile_size * 2.75)))
 			tile.scale = Vector2(0.01 * tile_size, 0.01 * tile_size)
 			tile.num = arr[r * board_size + c]
 			tile.row = r

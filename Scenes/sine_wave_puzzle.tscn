@@ -31,14 +31,14 @@ foreground_color = Color(1, 1, 1, 1)
 
 [node name="WavePlot2" parent="Container" unique_id=1232221889 instance=ExtResource("1_04gcx")]
 layout_mode = 2
-foreground_color = Color(1, 1, 1, 1)
+foreground_color = Color(1, 0, 0, 1)
 
 [node name="WavePlot3" parent="Container" unique_id=183565608 instance=ExtResource("1_04gcx")]
 layout_mode = 2
 type = 1
-foreground_color = Color(1, 1, 1, 1)
+foreground_color = Color(0.5294118, 0.80784315, 0.92156863, 1)
 
 [node name="WavePlot4" parent="Container" unique_id=1563150940 instance=ExtResource("1_04gcx")]
 layout_mode = 2
 type = 2
-foreground_color = Color(1, 1, 1, 1)
+foreground_color = Color(0.5764706, 0.4392157, 0.85882354, 1)
