@@ -3,18 +3,18 @@
 [ext_resource type="Script" uid="uid://b45i5aqd43m7h" path="res://Scripts/signal_manager.gd" id="1_8gbba"]
 [ext_resource type="Script" uid="uid://dd31po7ldumfo" path="res://Scripts/progress_bar.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://dv3vw02xehoak" path="res://Scenes/main_menu.tscn" id="1_jjgbg"]
-[ext_resource type="Texture2D" uid="uid://drsramn5ot08e" path="res://TheRed.png" id="2_hptm8"]
-[ext_resource type="Texture2D" uid="uid://b25unejel3w0j" path="res://icon.svg" id="2_kry3j"]
+[ext_resource type="Texture2D" uid="uid://drsramn5ot08e" path="res://assets/TheRed.png" id="2_hptm8"]
+[ext_resource type="Texture2D" uid="uid://b25unejel3w0j" path="res://assets/icon.svg" id="2_kry3j"]
 [ext_resource type="Script" uid="uid://bd4661b3xo515" path="res://Scripts/progress_bar_collider.gd" id="3_jjvhh"]
 [ext_resource type="Script" uid="uid://bls0ma7w114dq" path="res://Scripts/black_bar.gd" id="5_21xkr"]
-[ext_resource type="Texture2D" uid="uid://bvruxd33u13s6" path="res://bar_CrackSheet.png" id="6_344ge"]
-[ext_resource type="Texture2D" uid="uid://g0ejh4pmvhnj" path="res://barCrack1.png" id="6_wsu2k"]
+[ext_resource type="Texture2D" uid="uid://bvruxd33u13s6" path="res://assets/bar_CrackSheet.png" id="6_344ge"]
+[ext_resource type="Texture2D" uid="uid://g0ejh4pmvhnj" path="res://assets/barCrack1.png" id="6_wsu2k"]
 [ext_resource type="Script" uid="uid://cp2gy5wiph1ss" path="res://Scripts/start_button.gd" id="7_6bp64"]
-[ext_resource type="Texture2D" uid="uid://c4v25lcn2gnpr" path="res://blackBar_crack.png" id="7_d1ilt"]
+[ext_resource type="Texture2D" uid="uid://c4v25lcn2gnpr" path="res://assets/blackBar_crack.png" id="7_d1ilt"]
 [ext_resource type="Script" uid="uid://cijxfbauatmx4" path="res://Scripts/fracture_1.gd" id="7_k12tt"]
-[ext_resource type="Texture2D" uid="uid://cr6vj5usqx4m8" path="res://barCrack2.png" id="8_h1bgf"]
-[ext_resource type="Texture2D" uid="uid://cbj1pxynuc1hv" path="res://Cooper1.png" id="8_ynf5e"]
-[ext_resource type="Texture2D" uid="uid://gno0w78mf4bh" path="res://barCrack3.png" id="9_b3802"]
+[ext_resource type="Texture2D" uid="uid://cr6vj5usqx4m8" path="res://assets/barCrack2.png" id="8_h1bgf"]
+[ext_resource type="Texture2D" uid="uid://cbj1pxynuc1hv" path="res://assets/Cooper1.png" id="8_ynf5e"]
+[ext_resource type="Texture2D" uid="uid://gno0w78mf4bh" path="res://assets/barCrack3.png" id="9_b3802"]
 [ext_resource type="Script" uid="uid://bd2myjp74qrn2" path="res://Scripts/fracture_2.gd" id="9_k12tt"]
 [ext_resource type="Script" uid="uid://j76bkan0tx2n" path="res://Scripts/fracture_3.gd" id="11_h1bgf"]
 [ext_resource type="Script" uid="uid://nrox4ssfltsx" path="res://Scenes/wave_puzzle_button.gd" id="18_b3802"]
@@ -264,7 +264,6 @@ visible = false
 position = Vector2(1427, 521)
 
 [node name="TitleBackground" type="TextureRect" parent="." unique_id=696863816]
-visible = false
 offset_left = -1.0
 offset_top = -2.0
 offset_right = 1919.0

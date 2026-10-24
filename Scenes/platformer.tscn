@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://do8f6txblfx17"]
 
 [ext_resource type="Script" uid="uid://confi4dvy1t80" path="res://Scripts/platformer_character.gd" id="1_k0oe1"]
-[ext_resource type="Texture2D" uid="uid://b25unejel3w0j" path="res://icon.svg" id="2_6hv7n"]
-[ext_resource type="Texture2D" uid="uid://5a5byfd4w7ew" path="res://MasterTilesetTinyt.png" id="3_6hv7n"]
+[ext_resource type="Texture2D" uid="uid://b25unejel3w0j" path="res://assets/icon.svg" id="2_6hv7n"]
+[ext_resource type="Texture2D" uid="uid://5a5byfd4w7ew" path="res://assets/MasterTilesetTinyt.png" id="3_6hv7n"]
 [ext_resource type="Texture2D" uid="uid://b0ty8urj88n7g" path="res://assets/finishFlag.png" id="4_k5hyf"]
 [ext_resource type="Script" uid="uid://b0wiuy1sj0c2s" path="res://Scenes/flag_area_2d.gd" id="5_xp55e"]
 
