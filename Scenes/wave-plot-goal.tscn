@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bidibsdr6abge"]
+
+[ext_resource type="Script" uid="uid://b7st6msh24sg5" path="res://Scripts/wave-goal.gd" id="1_v7oni"]
+[ext_resource type="Texture2D" uid="uid://b25unejel3w0j" path="res://icon.svg" id="2_yt2ws"]
+
+[node name="WavePlot" type="Control" unique_id=22051648]
+custom_minimum_size = Vector2(727, 190)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_v7oni")
+
+[node name="BoxContainer" type="BoxContainer" parent="." unique_id=1640105733]
+layout_mode = 0
+offset_right = 721.0
+offset_bottom = 182.0
+vertical = true
+
+[node name="TextureRect" type="TextureRect" parent="BoxContainer" unique_id=42927057]
+layout_mode = 2
+size_flags_horizontal = 3
+offset_transform_enabled = true
+texture = ExtResource("2_yt2ws")

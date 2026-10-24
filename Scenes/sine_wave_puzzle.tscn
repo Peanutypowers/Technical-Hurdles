@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://c7qpxk1fd3wt2"]
+
+[ext_resource type="PackedScene" uid="uid://30tpdglh7wfe" path="res://Scenes/wave-plot.tscn" id="1_04gcx"]
+[ext_resource type="Script" uid="uid://6you745oj8vc" path="res://Scenes/sine_wave_puzzle.gd" id="1_27g4t"]
+[ext_resource type="PackedScene" uid="uid://bidibsdr6abge" path="res://Scenes/wave-plot-goal.tscn" id="1_t5fve"]
+
+[node name="SineWavePuzzle" type="Control" unique_id=1143714329]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+script = ExtResource("1_27g4t")
+
+[node name="Container" type="VBoxContainer" parent="." unique_id=268431981]
+layout_mode = 0
+offset_left = -363.0
+offset_top = 129.718
+offset_right = 364.0
+offset_bottom = 901.718
+
+[node name="Goal" parent="Container" unique_id=22051648 instance=ExtResource("1_t5fve")]
+layout_mode = 2
+box_amp = 20.0
+box_freq = 30.0
+sin_amp = 40.0
+sin_freq = 6.0
+tri_amp = 70.0
+tri_freq = 20.0
+foreground_color = Color(1, 1, 1, 1)
+
+[node name="WavePlot2" parent="Container" unique_id=1232221889 instance=ExtResource("1_04gcx")]
+layout_mode = 2
+foreground_color = Color(1, 1, 1, 1)
+
+[node name="WavePlot3" parent="Container" unique_id=183565608 instance=ExtResource("1_04gcx")]
+layout_mode = 2
+type = 1
+foreground_color = Color(1, 1, 1, 1)
+
+[node name="WavePlot4" parent="Container" unique_id=1563150940 instance=ExtResource("1_04gcx")]
+layout_mode = 2
+type = 2
+foreground_color = Color(1, 1, 1, 1)
