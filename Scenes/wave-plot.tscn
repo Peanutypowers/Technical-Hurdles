@@ -3,9 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://b25unejel3w0j" path="res://assets/icon.svg" id="1_3ji6t"]
 [ext_resource type="Script" uid="uid://ckkkmx3x5n4v4" path="res://Scripts/wave.gd" id="1_eu0os"]
 
-[node name="WavePlot" type="Control" unique_id=22051648]
+[node name="WavePlot" type="Control" unique_id=22051648 node_paths=PackedStringArray("frequency_slider", "amplitude_slider")]
+custom_minimum_size = Vector2(727, 190)
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_eu0os")
+frequency_slider = NodePath("BoxContainer/Sliders/VSlider")
+amplitude_slider = NodePath("BoxContainer/Sliders/VSlider2")
 
 [node name="BoxContainer" type="BoxContainer" parent="." unique_id=1640105733]
 layout_mode = 0
@@ -13,16 +17,11 @@ offset_right = 721.0
 offset_bottom = 182.0
 vertical = true
 
-[node name="TextureRect" type="TextureRect" parent="BoxContainer" unique_id=42927057 node_paths=PackedStringArray("frequency_slider", "amplitude_slider")]
+[node name="TextureRect" type="TextureRect" parent="BoxContainer" unique_id=42927057]
 layout_mode = 2
 size_flags_horizontal = 3
 offset_transform_enabled = true
 texture = ExtResource("1_3ji6t")
-script = ExtResource("1_eu0os")
-frequency_slider = NodePath("../Sliders/VSlider")
-amplitude_slider = NodePath("../Sliders/VSlider2")
-type = 2
-foreground_color = Color(1, 1, 1, 1)
 
 [node name="Sliders" type="BoxContainer" parent="BoxContainer" unique_id=1580813362]
 layout_mode = 2
@@ -32,6 +31,8 @@ alignment = 1
 [node name="VSlider" type="VSlider" parent="BoxContainer/Sliders" unique_id=1486705604]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+min_value = 20.0
+value = 20.0
 
 [node name="VSlider2" type="VSlider" parent="BoxContainer/Sliders" unique_id=700417190]
 custom_minimum_size = Vector2(0, 50)

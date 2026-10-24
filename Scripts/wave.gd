@@ -1,7 +1,9 @@
-extends TextureRect
+extends Control
 
 @export var frequency_slider: VSlider
 @export var amplitude_slider: VSlider
+
+@onready var texture: TextureRect = $BoxContainer/TextureRect
 
 enum WaveType {
 	Box,
@@ -17,9 +19,13 @@ var image: Image;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	image = Image.create_empty(int(self.size.x), int(self.size.y), true, Image.FORMAT_RGBA8);
+	image = Image.create_empty(int(texture.size.x), int(texture.size.y), true, Image.FORMAT_RGBA8);
 	frequency_slider.value_changed.connect(regen_texture)
 	amplitude_slider.value_changed.connect(regen_texture)
+	if type == WaveType.Sine:
+		frequency_slider.step = 0.1
+		frequency_slider.min_value = PI
+		frequency_slider.max_value = 8 * PI
 	regen_texture(0);
 	
 func regen_texture(_value: float) -> void:
@@ -44,6 +50,6 @@ func regen_texture(_value: float) -> void:
 				image.set_pixel(x, int((x/freq - progress) * amp + y_off), foreground_color);
 		WaveType.Sine:
 			for x in range(self.image.get_size().x):
-				image.set_pixel(x, int(sin(x / 200. * freq) * amp) + y_off, foreground_color)
+				image.set_pixel(x, int((sin(x / 200. * freq) + 1.0)/2.0 * amp) + y_off, foreground_color)
 				
-	self.texture = ImageTexture.create_from_image(image);
+	texture.texture = ImageTexture.create_from_image(image);
