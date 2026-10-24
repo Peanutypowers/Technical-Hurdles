@@ -171,6 +171,14 @@ script = ExtResource("1_8gbba")
 
 [node name="Loading Screen" type="Node2D" parent="." unique_id=1827226046]
 
+[node name="ColorRect" type="ColorRect" parent="Loading Screen" unique_id=1643553709]
+offset_left = 483.0
+offset_top = 389.00003
+offset_right = 523.0
+offset_bottom = 429.00003
+scale = Vector2(23.660252, 3.421367)
+color = Color(0.5619949, 0, 0.07282085, 1)
+
 [node name="TextureRect" type="TextureRect" parent="Loading Screen" unique_id=2002145916]
 offset_left = 486.0
 offset_top = 394.0
@@ -256,6 +264,7 @@ visible = false
 position = Vector2(1427, 521)
 
 [node name="TitleBackground" type="TextureRect" parent="." unique_id=696863816]
+visible = false
 offset_left = -1.0
 offset_top = -2.0
 offset_right = 1919.0

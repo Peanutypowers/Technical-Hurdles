@@ -29,6 +29,7 @@ func _on_timer_timeout() -> void:
 	timer_check = true
 	$"../FractureAnimation".hide()
 	$".".visible = true
+	$"..".size.x = 800
 
 
 func _progress_bar_broken() -> void:
