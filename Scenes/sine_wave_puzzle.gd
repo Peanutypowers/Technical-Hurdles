@@ -27,4 +27,6 @@ func _process(_delta: float) -> void:
 		sinplot.foreground_color = Color.WHITE
 	
 	if box and tri and sin0:
-		pass
+		# win
+		get_node("/root/Signal Manager").visible = true
+		get_node("/root/SineWavePuzzle").free()
