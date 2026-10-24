@@ -7,6 +7,14 @@ const JUMP_VELOCITY = -800.0
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
+	if velocity.y > 0:
+		$AnimatedSprite2D.play("fall")
+	if velocity.y < 0:
+		$AnimatedSprite2D.play("jump")
+	
+	if is_on_floor():
+		$AnimatedSprite2D.play("idle")
+	
 	if Input.is_action_pressed("run"):
 		speed = 500.0
 	else:
@@ -23,8 +31,12 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * speed
+		$AnimatedSprite2D.play("walking")
+		$AnimatedSprite2D.flip_h = true
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
+		$AnimatedSprite2D.play("walking")
+
 		
 	if $".".position.y > 1200:
 		$".".position = respawn_point

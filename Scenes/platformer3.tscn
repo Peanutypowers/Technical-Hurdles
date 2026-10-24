@@ -1,12 +1,103 @@
 [gd_scene format=4 uid="uid://b80cq0mxew5gk"]
 
+[ext_resource type="Texture2D" uid="uid://dfx5dwbvfnxsj" path="res://assets/backgroundArt.png" id="1_uv182"]
 [ext_resource type="Script" uid="uid://confi4dvy1t80" path="res://Scripts/platformer_character.gd" id="1_vjvjj"]
-[ext_resource type="Texture2D" uid="uid://b25unejel3w0j" path="res://icon.svg" id="2_env8r"]
-[ext_resource type="Texture2D" uid="uid://5a5byfd4w7ew" path="res://MasterTilesetTinyt.png" id="3_nc4p1"]
+[ext_resource type="Texture2D" uid="uid://bq2sxnvlefkeo" path="res://assets/Cooper_falling.png" id="3_5nrer"]
+[ext_resource type="Texture2D" uid="uid://5a5byfd4w7ew" path="res://assets/MasterTilesetTinyt.png" id="3_nc4p1"]
+[ext_resource type="Texture2D" uid="uid://cghr4fqqyxpd8" path="res://assets/Cooper_idle.png" id="4_fmj5k"]
+[ext_resource type="Script" uid="uid://bls0ma7w114dq" path="res://Scripts/black_bar.gd" id="5_d1wf5"]
+[ext_resource type="Texture2D" uid="uid://dmmomiy81jnny" path="res://assets/Cooper_jump.png" id="5_qqa6s"]
+[ext_resource type="Texture2D" uid="uid://bp1ekrgxpl6jf" path="res://assets/Cooper_walking.png" id="6_0x0ox"]
+[ext_resource type="Texture2D" uid="uid://c4v25lcn2gnpr" path="res://assets/blackBar_crack.png" id="6_ixai1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_emsnq"]
-radius = 18.0
-height = 47.500122
+radius = 15.750061
+height = 31.500122
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cl3yc"]
+atlas = ExtResource("4_fmj5k")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmrgc"]
+atlas = ExtResource("4_fmj5k")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ph50m"]
+atlas = ExtResource("4_fmj5k")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kw0ps"]
+atlas = ExtResource("4_fmj5k")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fogaj"]
+atlas = ExtResource("6_0x0ox")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4j32d"]
+atlas = ExtResource("6_0x0ox")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8glt"]
+atlas = ExtResource("6_0x0ox")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6juc2"]
+atlas = ExtResource("6_0x0ox")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_emsnq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_5nrer")
+}],
+"loop": 1,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cl3yc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmrgc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ph50m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kw0ps")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_qqa6s")
+}],
+"loop": 1,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fogaj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4j32d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8glt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6juc2")
+}],
+"loop": 1,
+"name": &"walking",
+"speed": 5.0
+}]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6hv7n"]
 texture = ExtResource("3_nc4p1")
@@ -29,7 +120,42 @@ sources/1 = SubResource("TileSetAtlasSource_6hv7n")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7qv8s"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pmx8"]
+atlas = ExtResource("6_ixai1")
+region = Rect2(0, 0, 105, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u50mg"]
+atlas = ExtResource("6_ixai1")
+region = Rect2(105, 0, 105, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbgmd"]
+atlas = ExtResource("6_ixai1")
+region = Rect2(210, 0, 105, 270)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5nrer"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3pmx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u50mg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbgmd")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Platformer" type="Node2D" unique_id=206407023]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=942237638]
+offset_left = 420.0
+offset_right = 1500.0
+offset_bottom = 1080.0
+texture = ExtResource("1_uv182")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=270373192]
 position = Vector2(504, 741)
@@ -41,10 +167,11 @@ physics_interpolation_mode = 1
 position = Vector2(2.2888184e-05, -0.2500534)
 shape = SubResource("CapsuleShape2D_emsnq")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1144267882]
-position = Vector2(2.2888184e-05, 0.4999771)
-scale = Vector2(0.29687536, 0.3789059)
-texture = ExtResource("2_env8r")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=703990009]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_emsnq")
+animation = &"walking"
+frame_progress = 0.8222044
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=390226633]
 texture_filter = 1
@@ -66,3 +193,28 @@ scale = Vector2(11.479995, 11.359997)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=612660899]
 shape = SubResource("RectangleShape2D_7qv8s")
+
+[node name="Left" type="ColorRect" parent="." unique_id=599473309]
+offset_left = 1500.0
+offset_right = 1920.0
+offset_bottom = 1084.0
+color = Color(0, 0, 0, 1)
+script = ExtResource("5_d1wf5")
+metadata/_edit_use_anchors_ = true
+
+[node name="Right" type="ColorRect" parent="." unique_id=1718047343]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_right = 420.0
+offset_bottom = 1084.0
+grow_horizontal = 0
+color = Color(0, 0, 0, 1)
+script = ExtResource("5_d1wf5")
+metadata/_edit_use_anchors_ = true
+
+[node name="BlackBarFractureAnimation" type="AnimatedSprite2D" parent="Right" unique_id=605053550]
+visible = false
+position = Vector2(212.99998, 534.00006)
+scale = Vector2(4.00207, 4.110814)
+sprite_frames = SubResource("SpriteFrames_5nrer")
