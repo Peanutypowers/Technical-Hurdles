@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://ca6wycfl8bkuj" path="res://Scripts/flow_source.gd" id="1_2urg0"]
 [ext_resource type="Script" uid="uid://bef25qwtvhpv" path="res://Scripts/pipe.gd" id="2_1tef5"]
-[ext_resource type="Script" uid="uid://c0h1t2tk4nhii" path="res://Scripts/flow-sink.gd" id="3_87rtb"]
+[ext_resource type="Script" uid="uid://c0h1t2tk4nhii" path="res://Scripts/flow-sink-1.gd" id="3_87rtb"]
+[ext_resource type="Script" uid="uid://c0x7oyj4iqlak" path="res://Scripts/flow-sink-2.gd" id="4_4kqtu"]
+[ext_resource type="Script" uid="uid://urcb3mwjcaag" path="res://Scripts/flow-sink-3.gd" id="5_sjb18"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w74sn"]
 size = Vector2(100, 100)
@@ -51,7 +53,7 @@ shape = SubResource("RectangleShape2D_w74sn")
 [node name="Pipe31" type="Area2D" parent="PipeGrid" unique_id=125585538]
 position = Vector2(953, 217)
 script = ExtResource("2_1tef5")
-type = 2
+type = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PipeGrid/Pipe31" unique_id=951637446]
 position = Vector2(50, 50)
@@ -114,7 +116,7 @@ shape = SubResource("RectangleShape2D_4qjb2")
 [node name="Pipe23" type="Area2D" parent="PipeGrid" unique_id=1596808149]
 position = Vector2(853, 417)
 script = ExtResource("2_1tef5")
-type = 1
+type = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PipeGrid/Pipe23" unique_id=1016374358]
 position = Vector2(50, 50)
@@ -141,7 +143,7 @@ shape = SubResource("RectangleShape2D_4qjb2")
 [node name="Pipe41" type="Area2D" parent="PipeGrid" unique_id=823643965]
 position = Vector2(1053, 217)
 script = ExtResource("2_1tef5")
-type = 2
+type = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PipeGrid/Pipe41" unique_id=155970051]
 position = Vector2(50, 50)
@@ -168,7 +170,7 @@ shape = SubResource("RectangleShape2D_4qjb2")
 [node name="Pipe44" type="Area2D" parent="PipeGrid" unique_id=409838687]
 position = Vector2(1053, 517)
 script = ExtResource("2_1tef5")
-type = 2
+type = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PipeGrid/Pipe44" unique_id=644224863]
 position = Vector2(50, 50)
@@ -230,7 +232,7 @@ shape = SubResource("RectangleShape2D_4qjb2")
 [node name="Pipe51" type="Area2D" parent="PipeGrid" unique_id=481138504]
 position = Vector2(1153, 217)
 script = ExtResource("2_1tef5")
-type = 2
+type = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PipeGrid/Pipe51" unique_id=299139410]
 position = Vector2(50, 50)
@@ -248,7 +250,7 @@ shape = SubResource("RectangleShape2D_4qjb2")
 [node name="Pipe53" type="Area2D" parent="PipeGrid" unique_id=307079844]
 position = Vector2(1153, 417)
 script = ExtResource("2_1tef5")
-type = 2
+type = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PipeGrid/Pipe53" unique_id=16397911]
 position = Vector2(50, 50)
@@ -272,9 +274,29 @@ type = 2
 position = Vector2(50, 50)
 shape = SubResource("RectangleShape2D_4qjb2")
 
-[node name="Flow Sink" type="Area2D" parent="." unique_id=1142418292]
+[node name="Flow Sink" type="Area2D" parent="." unique_id=1142418292 node_paths=PackedStringArray("near_pipe")]
 position = Vector2(703, 467)
 script = ExtResource("3_87rtb")
+near_pipe = NodePath("../PipeGrid/Pipe13")
+needed_color = Color(0.85490197, 0, 0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flow Sink" unique_id=799269015]
+shape = SubResource("RectangleShape2D_s7np4")
+
+[node name="Flow Sink2" type="Area2D" parent="." unique_id=422998785 node_paths=PackedStringArray("near_pipe")]
+position = Vector2(1303, 567)
+script = ExtResource("4_4kqtu")
+near_pipe = NodePath("../PipeGrid/Pipe54")
+needed_color = Color(0.27058825, 0.4, 0.8862745, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flow Sink2" unique_id=1960520762]
+shape = SubResource("RectangleShape2D_s7np4")
+
+[node name="Flow Sink3" type="Area2D" parent="." unique_id=1592617095 node_paths=PackedStringArray("near_pipe")]
+position = Vector2(1103, 167)
+script = ExtResource("5_sjb18")
+near_pipe = NodePath("../PipeGrid/Pipe41")
+needed_color = Color(0.2901961, 0.5254902, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flow Sink3" unique_id=669122494]
 shape = SubResource("RectangleShape2D_s7np4")

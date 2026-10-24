@@ -171,9 +171,9 @@ func on_fill_down(color: Color) -> void:
 		PipeType.DoubleBend:
 			for cp: Array in cps:
 				if rotation_state % 2 == 0 and cp[0] == Direction.West:
-					cp[1].fill_from_left.emit(color)
-				if rotation_state % 2 != 0 and cp[0] == Direction.East:
 					cp[1].fill_from_right.emit(color)
+				if rotation_state % 2 != 0 and cp[0] == Direction.East:
+					cp[1].fill_from_left.emit(color)
 
 func _draw() -> void:
 	var color_scalar: float = lerp(0., 0.4, abs((Time.get_ticks_msec() % frequency)/(frequency / 2.) - 1.0));
