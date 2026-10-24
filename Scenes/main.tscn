@@ -1,31 +1,34 @@
 [gd_scene format=3 uid="uid://0wavj3nb2b0"]
 
+[ext_resource type="Script" uid="uid://b45i5aqd43m7h" path="res://Scripts/signal_manager.gd" id="1_8gbba"]
+[ext_resource type="Script" uid="uid://dd31po7ldumfo" path="res://Scripts/progress_bar.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://dv3vw02xehoak" path="res://Scenes/main_menu.tscn" id="1_jjgbg"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7u77a"]
-bg_color = Color(0.46540534, 0.6198333, 0.7512651, 1)
+[ext_resource type="Texture2D" uid="uid://b25unejel3w0j" path="res://icon.svg" id="2_kry3j"]
+[ext_resource type="Script" uid="uid://bd4661b3xo515" path="res://Scripts/progress_bar_collider.gd" id="3_jjvhh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7u77a"]
 size = Vector2(599, 61)
 
 [node name="Signal Manager" type="Node2D" unique_id=740488106]
+script = ExtResource("1_8gbba")
 
 [node name="Loading Screen" type="Node2D" parent="." unique_id=1827226046]
 
-[node name="ProgressBar" type="ProgressBar" parent="Loading Screen" unique_id=596111640]
-custom_minimum_size = Vector2(600, 60)
-offset_left = 649.0
-offset_top = 328.0
-offset_right = 1249.0
-offset_bottom = 388.0
-theme_override_styles/fill = SubResource("StyleBoxFlat_7u77a")
-value = 30.22
-show_percentage = false
+[node name="TextureRect" type="TextureRect" parent="Loading Screen" unique_id=2002145916]
+offset_left = 657.0
+offset_top = 392.0
+offset_right = 785.0
+offset_bottom = 520.0
+texture = ExtResource("2_kry3j")
+script = ExtResource("1_bo1nx")
 
-[node name="Area2D" type="Area2D" parent="Loading Screen/ProgressBar" unique_id=215111722]
-position = Vector2(299, 31)
+[node name="Area2D" type="Area2D" parent="Loading Screen/TextureRect" unique_id=215111722]
+z_index = 1
+position = Vector2(303, 68)
+script = ExtResource("3_jjvhh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Loading Screen/ProgressBar/Area2D" unique_id=670854762]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Loading Screen/TextureRect/Area2D" unique_id=670854762]
+z_index = 1
 shape = SubResource("RectangleShape2D_7u77a")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Loading Screen" unique_id=24885469]
@@ -41,7 +44,8 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -420.0
-offset_bottom = 1084.0
+offset_top = -4.0
+offset_bottom = 1080.0
 grow_horizontal = 0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
@@ -50,3 +54,5 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="Main Menu" unique_id=225128895]
 visible = false
+
+[connection signal="update_progress_bar" from="Loading Screen/TextureRect/Area2D" to="Loading Screen/TextureRect" method="_on_area_2d_update_progress_bar"]
