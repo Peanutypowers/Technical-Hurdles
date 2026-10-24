@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dv3vw02xehoak"]
+
+[node name="Main Menu" type="Node2D" unique_id=3897135]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=225128895]
+visible = false
+
+[node name="Left" type="ColorRect" parent="CanvasLayer" unique_id=160817513]
+offset_right = 485.0
+offset_bottom = 1084.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Right" type="ColorRect" parent="CanvasLayer" unique_id=931271523]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -485.0
+offset_bottom = 1084.0
+grow_horizontal = 0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1801656254]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -61.0
+offset_right = 23.5
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 60
+
+[node name="Play Button" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=912622966]
+layout_mode = 2
+text = "PLAY"
+
+[node name="Settings Button" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1465920826]
+layout_mode = 2
+text = "SETTUBGS
+"
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1019419940]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.5
+offset_right = 48.5
+offset_bottom = 73.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 50
+
+[node name="Game Name" type="Label" parent="CanvasLayer/MarginContainer" unique_id=664618262]
+layout_mode = 2
+text = "GAME NAME"

@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://0wavj3nb2b0"]
+
+[ext_resource type="PackedScene" uid="uid://dv3vw02xehoak" path="res://Scenes/main_menu.tscn" id="1_jjgbg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7u77a"]
+bg_color = Color(0.46540534, 0.6198333, 0.7512651, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7u77a"]
+size = Vector2(599, 61)
+
+[node name="Signal Manager" type="Node2D" unique_id=740488106]
+
+[node name="Loading Screen" type="Node2D" parent="." unique_id=1827226046]
+
+[node name="ProgressBar" type="ProgressBar" parent="Loading Screen" unique_id=596111640]
+custom_minimum_size = Vector2(600, 60)
+offset_left = 649.0
+offset_top = 328.0
+offset_right = 1249.0
+offset_bottom = 388.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_7u77a")
+value = 30.22
+show_percentage = false
+
+[node name="Area2D" type="Area2D" parent="Loading Screen/ProgressBar" unique_id=215111722]
+position = Vector2(299, 31)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Loading Screen/ProgressBar/Area2D" unique_id=670854762]
+shape = SubResource("RectangleShape2D_7u77a")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Loading Screen" unique_id=24885469]
+
+[node name="Left" type="ColorRect" parent="Loading Screen/CanvasLayer" unique_id=1376877937]
+offset_right = 420.0
+offset_bottom = 1084.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Right" type="ColorRect" parent="Loading Screen/CanvasLayer" unique_id=1075544938]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -420.0
+offset_bottom = 1084.0
+grow_horizontal = 0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Main Menu" parent="." unique_id=3897135 instance=ExtResource("1_jjgbg")]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="Main Menu" unique_id=225128895]
+visible = false
