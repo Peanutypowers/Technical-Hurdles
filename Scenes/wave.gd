@@ -15,10 +15,10 @@ enum WaveType {
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	frequency_slider.changed.connect(regen_texture)
-	amplitude_slider.changed.connect(regen_texture)
+	frequency_slider.value_changed.connect(regen_texture)
+	amplitude_slider.value_changed.connect(regen_texture)
 	
-func regen_texture() -> void:
+func regen_texture(value: float) -> void:
 	var width: int = self.texture.get_width();
 	var height: int = self.texture.get_height();
 	
@@ -27,12 +27,12 @@ func regen_texture() -> void:
 	match WaveType:
 		WaveType.Box:
 			for x in range(width):
-				var amp: int = floor(x / frequency_slider.value) % 2 == 0;
-				img.set_pixel(x, round(amp * amplitude_slider.value), foreground_color);
-				pass
+				var amp: int = floor(x / value) % 2 == 0;
+				img.set_pixel(x, round(amp * value), foreground_color);
 		WaveType.Triangle:
 			pass
 		WaveType.Sine:
 			pass 
 			
+	print("Regenerated!")
 	self.texture = ImageTexture.create_from_image(img);
