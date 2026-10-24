@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://drsramn5ot08e" path="res://assets/TheRed.png" id="2_hptm8"]
 [ext_resource type="Texture2D" uid="uid://b25unejel3w0j" path="res://assets/icon.svg" id="2_kry3j"]
 [ext_resource type="Script" uid="uid://bd4661b3xo515" path="res://Scripts/progress_bar_collider.gd" id="3_jjvhh"]
+[ext_resource type="Script" uid="uid://dnhu7igktxga3" path="res://Scripts/title_background.gd" id="3_pdsj5"]
+[ext_resource type="Texture2D" uid="uid://dqcnr7mkxn5mq" path="res://assets/title.png" id="4_ee4r6"]
 [ext_resource type="Script" uid="uid://bls0ma7w114dq" path="res://Scripts/black_bar.gd" id="5_21xkr"]
 [ext_resource type="Texture2D" uid="uid://bvruxd33u13s6" path="res://assets/bar_CrackSheet.png" id="6_344ge"]
 [ext_resource type="Texture2D" uid="uid://g0ejh4pmvhnj" path="res://assets/barCrack1.png" id="6_wsu2k"]
@@ -171,19 +173,34 @@ script = ExtResource("1_8gbba")
 
 [node name="Loading Screen" type="Node2D" parent="." unique_id=1827226046]
 
+[node name="TitleBackground" type="TextureRect" parent="Loading Screen" unique_id=696863816]
+offset_left = -1.0
+offset_top = -2.0
+offset_right = 1919.0
+offset_bottom = 1078.0
+scale = Vector2(0.9982833, 1.0019492)
+texture = ExtResource("8_ynf5e")
+script = ExtResource("3_pdsj5")
+
+[node name="Title" type="Sprite2D" parent="Loading Screen" unique_id=897570199]
+position = Vector2(964, 536)
+texture = ExtResource("4_ee4r6")
+
 [node name="ColorRect" type="ColorRect" parent="Loading Screen" unique_id=1643553709]
-offset_left = 483.0
-offset_top = 389.00003
-offset_right = 523.0
-offset_bottom = 429.00003
+visible = false
+offset_left = 484.0
+offset_top = 460.0
+offset_right = 524.0
+offset_bottom = 500.0
 scale = Vector2(23.660252, 3.421367)
 color = Color(0.5619949, 0, 0.07282085, 1)
 
 [node name="TextureRect" type="TextureRect" parent="Loading Screen" unique_id=2002145916]
-offset_left = 486.0
-offset_top = 394.0
-offset_right = 614.0
-offset_bottom = 522.0
+visible = false
+offset_left = 487.0
+offset_top = 464.99997
+offset_right = 615.0
+offset_bottom = 593.0
 texture = ExtResource("2_hptm8")
 script = ExtResource("1_bo1nx")
 
@@ -263,14 +280,6 @@ visible = false
 [node name="Node2D" type="Node2D" parent="." unique_id=500356220]
 position = Vector2(1427, 521)
 
-[node name="TitleBackground" type="TextureRect" parent="." unique_id=696863816]
-offset_left = -1.0
-offset_top = -2.0
-offset_right = 1919.0
-offset_bottom = 1078.0
-scale = Vector2(0.9982833, 1.0019492)
-texture = ExtResource("8_ynf5e")
-
 [node name="StartButton" type="TextureButton" parent="." unique_id=370944345]
 offset_left = 541.0
 offset_top = 653.0
@@ -306,6 +315,7 @@ script = ExtResource("20_hibaj")
 
 [connection signal="progress_bar_broken" from="." to="Loading Screen/CanvasLayer/Left" method="_progress_bar_broken"]
 [connection signal="progress_bar_broken" from="." to="Loading Screen/CanvasLayer/Right" method="_progress_bar_broken"]
+[connection signal="cooper_image_2" from="Loading Screen/TextureRect" to="Loading Screen/TitleBackground" method="_cooper_image_2"]
 [connection signal="progress_bar_broken" from="Loading Screen/TextureRect" to="." method="_progress_bar_broken"]
 [connection signal="progress_bar_broken" from="Loading Screen/TextureRect" to="Loading Screen/TextureRect/Fracture1" method="_progress_bar_broken"]
 [connection signal="progress_bar_broken" from="Loading Screen/TextureRect" to="Loading Screen/TextureRect/Fracture2" method="_progress_bar_broken"]

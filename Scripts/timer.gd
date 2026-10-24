@@ -11,9 +11,9 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_texture_rect_progress_bar_broken() -> void:
-	start()
+func _cooper_image_2() -> void:
+	$".".start()
 
 
 func _on_timeout() -> void:
-	print("Yay!")
+	print("test")

@@ -11,5 +11,7 @@ func _process(delta: float) -> void:
 
 
 func _on_pressed() -> void:
-	$"../TitleBackground".hide()
 	$".".hide()
+	$"../Loading Screen/TextureRect".visible = true
+	$"../Loading Screen/ColorRect".visible = true
+	$"../Loading Screen/Title".hide()
