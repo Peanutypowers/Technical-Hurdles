@@ -8,7 +8,7 @@
 radius = 18.0
 height = 47.500122
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h786q"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6hv7n"]
 texture = ExtResource("3_6hv7n")
 0:0/0 = 0
 1:0/0 = 0
@@ -25,7 +25,7 @@ texture = ExtResource("3_6hv7n")
 
 [sub_resource type="TileSet" id="TileSet_emsnq"]
 physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_h786q")
+sources/1 = SubResource("TileSetAtlasSource_6hv7n")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7qv8s"]
 

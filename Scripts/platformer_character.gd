@@ -9,6 +9,8 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if Input.is_action_pressed("run"):
 		speed = 500.0
+	else:
+		speed = 300.0
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
