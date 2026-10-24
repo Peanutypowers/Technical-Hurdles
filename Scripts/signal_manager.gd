@@ -15,3 +15,7 @@ func _progress_bar_broken() -> void:
 
 func _on_timer_timeout() -> void:
 	print("yay!")
+
+
+func _on_wave_puzzle_button_pressed() -> void:
+	pass # Replace with function body.
