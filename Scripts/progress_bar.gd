@@ -8,6 +8,7 @@ var progress_break_flag = 0
 var progress_break_check = true
 var button_load = false
 var animation_check = true
+var completed = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -33,7 +34,7 @@ func _process(delta: float) -> void:
 	if size.x < 600:
 		progress_break_check = false
 	
-	if progress_break_flag >= 3:
+	if progress_break_flag >= 3 and !completed:
 		progress_bar_broken.emit()
 		if animation_check:
 			$FractureAnimation.visible = true
@@ -42,6 +43,7 @@ func _process(delta: float) -> void:
 			$"../CanvasLayer/Right/BlackBarFractureAnimation".play()
 			size.x = 1015
 			animation_check = false
+			completed = true
 		
 
 

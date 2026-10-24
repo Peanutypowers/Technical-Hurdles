@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://confi4dvy1t80" path="res://Scripts/platformer_character.gd" id="1_1yquo"]
 [ext_resource type="Texture2D" uid="uid://b25unejel3w0j" path="res://icon.svg" id="2_xtgi6"]
 [ext_resource type="Texture2D" uid="uid://5a5byfd4w7ew" path="res://MasterTilesetTinyt.png" id="3_civae"]
-[ext_resource type="PackedScene" uid="uid://csfq4gtc4ht1r" path="res://Scenes/flag_waving.tscn" id="4_xtgi6"]
+[ext_resource type="Texture2D" uid="uid://b0ty8urj88n7g" path="res://assets/finishFlag.png" id="4_civae"]
+[ext_resource type="Script" uid="uid://b0wiuy1sj0c2s" path="res://Scenes/flag_area_2d.gd" id="5_gqjbn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gqjbn"]
 radius = 18.0
@@ -33,12 +34,66 @@ sources/1 = SubResource("TileSetAtlasSource_oj8te")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1yquo"]
 size = Vector2(25.174221, 4.01408)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrg7j"]
+atlas = ExtResource("4_civae")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccouv"]
+atlas = ExtResource("4_civae")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3h5v8"]
+atlas = ExtResource("4_civae")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cw40y"]
+atlas = ExtResource("4_civae")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8h6vv"]
+atlas = ExtResource("4_civae")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_333ig"]
+atlas = ExtResource("4_civae")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wiaft"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrg7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccouv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3h5v8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cw40y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8h6vv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_333ig")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m82vy"]
+radius = 6.0
+
 [node name="Platformer2" type="Node2D" unique_id=1124376293]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1329964402]
 position = Vector2(951, 786)
 scale = Vector2(2, 2)
 script = ExtResource("1_1yquo")
+respawn_point = Vector2(951, 786)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1401336278]
 physics_interpolation_mode = 1
@@ -46,7 +101,7 @@ position = Vector2(2.2888184e-05, -0.2500534)
 shape = SubResource("CapsuleShape2D_gqjbn")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=922815611]
-position = Vector2(2.2888184e-05, 0.4999771)
+position = Vector2(-4.0000076, 15.500008)
 scale = Vector2(0.29687536, 0.3789059)
 texture = ExtResource("2_xtgi6")
 
@@ -71,6 +126,7 @@ scale = Vector2(11.479995, 11.359997)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=493092464]
 position = Vector2(-0.30488586, -31.338036)
 shape = SubResource("RectangleShape2D_1yquo")
+one_way_collision = true
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1928385286]
 position = Vector2(947, 1063)
@@ -79,7 +135,20 @@ scale = Vector2(11.479995, 11.359997)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=377994479]
 position = Vector2(-0.30488586, -52.376774)
 shape = SubResource("RectangleShape2D_1yquo")
+one_way_collision = true
 
-[node name="flag_waving" parent="." unique_id=891376895 instance=ExtResource("4_xtgi6")]
+[node name="flag_waving" type="Node2D" parent="." unique_id=891376895]
 position = Vector2(948.99994, 386.99997)
-scale = Vector2(4.945, 4.945)
+scale = Vector2(5, 5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="flag_waving" unique_id=1709017073]
+sprite_frames = SubResource("SpriteFrames_wiaft")
+
+[node name="Area2D" type="Area2D" parent="flag_waving" unique_id=1485226120]
+script = ExtResource("5_gqjbn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="flag_waving/Area2D" unique_id=411635820]
+shape = SubResource("CircleShape2D_m82vy")
+
+[connection signal="area_entered" from="flag_waving/Area2D" to="flag_waving/Area2D" method="_on_area_entered"]
+[connection signal="body_entered" from="flag_waving/Area2D" to="flag_waving/Area2D" method="_on_body_entered"]

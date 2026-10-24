@@ -15,7 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://cr6vj5usqx4m8" path="res://barCrack2.png" id="8_h1bgf"]
 [ext_resource type="Texture2D" uid="uid://cbj1pxynuc1hv" path="res://Cooper1.png" id="8_ynf5e"]
 [ext_resource type="Texture2D" uid="uid://gno0w78mf4bh" path="res://barCrack3.png" id="9_b3802"]
-[ext_resource type="Script" uid="uid://chgl6hg4602qp" path="res://Scripts/timer.gd" id="16_k12tt"]
+[ext_resource type="Script" uid="uid://bd2myjp74qrn2" path="res://Scripts/fracture_2.gd" id="9_k12tt"]
+[ext_resource type="Script" uid="uid://j76bkan0tx2n" path="res://Scripts/fracture_3.gd" id="11_h1bgf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ynf5e"]
 atlas = ExtResource("6_344ge")
@@ -167,6 +168,14 @@ script = ExtResource("1_8gbba")
 
 [node name="Loading Screen" type="Node2D" parent="." unique_id=1827226046]
 
+[node name="ColorRect" type="ColorRect" parent="Loading Screen" unique_id=1643553709]
+offset_left = 483.0
+offset_top = 389.00003
+offset_right = 523.0
+offset_bottom = 429.00003
+scale = Vector2(23.660252, 3.421367)
+color = Color(0.5619949, 0, 0.07282085, 1)
+
 [node name="TextureRect" type="TextureRect" parent="Loading Screen" unique_id=2002145916]
 offset_left = 486.0
 offset_top = 394.0
@@ -176,6 +185,7 @@ texture = ExtResource("2_hptm8")
 script = ExtResource("1_bo1nx")
 
 [node name="FractureAnimation" type="AnimatedSprite2D" parent="Loading Screen/TextureRect" unique_id=335661455]
+visible = false
 position = Vector2(887, 62.99997)
 scale = Vector2(0.6, 0.559)
 sprite_frames = SubResource("SpriteFrames_emsnq")
@@ -193,20 +203,25 @@ position = Vector2(-3, 3)
 shape = SubResource("RectangleShape2D_7u77a")
 
 [node name="Fracture1" type="Sprite2D" parent="Loading Screen/TextureRect" unique_id=361533013]
+visible = false
 position = Vector2(971, 63)
 scale = Vector2(0.6106762, 0.5540922)
 texture = ExtResource("6_wsu2k")
 script = ExtResource("7_k12tt")
 
 [node name="Fracture2" type="Sprite2D" parent="Loading Screen/TextureRect" unique_id=1923918486]
+visible = false
 position = Vector2(887, 63)
 scale = Vector2(0.61344266, 0.56052667)
 texture = ExtResource("8_h1bgf")
+script = ExtResource("9_k12tt")
 
 [node name="Fracture3" type="Sprite2D" parent="Loading Screen/TextureRect" unique_id=1706618195]
+visible = false
 position = Vector2(803, 62)
 scale = Vector2(0.58364403, 0.5543931)
 texture = ExtResource("9_b3802")
+script = ExtResource("11_h1bgf")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Loading Screen" unique_id=24885469]
 
@@ -237,11 +252,6 @@ sprite_frames = SubResource("SpriteFrames_7qv8s")
 frame = 2
 frame_progress = 0.18449281
 
-[node name="Timer" type="Timer" parent="Loading Screen" unique_id=639115079]
-wait_time = 0.079
-one_shot = true
-script = ExtResource("16_k12tt")
-
 [node name="Main Menu" parent="." unique_id=3897135 instance=ExtResource("1_jjgbg")]
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="Main Menu" unique_id=225128895]
@@ -271,9 +281,9 @@ script = ExtResource("7_6bp64")
 [connection signal="progress_bar_broken" from="." to="Loading Screen/CanvasLayer/Left" method="_progress_bar_broken"]
 [connection signal="progress_bar_broken" from="." to="Loading Screen/CanvasLayer/Right" method="_progress_bar_broken"]
 [connection signal="progress_bar_broken" from="Loading Screen/TextureRect" to="." method="_progress_bar_broken"]
-[connection signal="progress_bar_broken" from="Loading Screen/TextureRect" to="Loading Screen/Timer" method="_on_texture_rect_progress_bar_broken"]
+[connection signal="progress_bar_broken" from="Loading Screen/TextureRect" to="Loading Screen/TextureRect/Fracture1" method="_progress_bar_broken"]
+[connection signal="progress_bar_broken" from="Loading Screen/TextureRect" to="Loading Screen/TextureRect/Fracture2" method="_progress_bar_broken"]
+[connection signal="progress_bar_broken" from="Loading Screen/TextureRect" to="Loading Screen/TextureRect/Fracture3" method="_progress_bar_broken"]
 [connection signal="update_progress_bar" from="Loading Screen/TextureRect/Area2D" to="Loading Screen/TextureRect" method="_on_area_2d_update_progress_bar"]
-[connection signal="timeout" from="Loading Screen/Timer" to="Loading Screen/TextureRect/Fracture1" method="_on_timer_timeout"]
-[connection signal="timeout" from="Loading Screen/Timer" to="Loading Screen/Timer" method="_on_timeout"]
 [connection signal="pressed" from="StartButton" to="Loading Screen/TextureRect" method="_on_start_button_pressed"]
 [connection signal="pressed" from="StartButton" to="StartButton" method="_on_pressed"]
