@@ -1,8 +1,18 @@
 [gd_scene format=3 uid="uid://b45jswb5kfumd"]
 
 [ext_resource type="Script" uid="uid://dmmyg0cjb61e3" path="res://Scripts/picture_tile.gd" id="1_2k3pa"]
+[ext_resource type="Texture2D" uid="uid://b25unejel3w0j" path="res://icon.svg" id="2_4m8o1"]
 
 [node name="Picture Tile" type="TextureButton" unique_id=1339828254]
+texture_normal = ExtResource("2_4m8o1")
+stretch_mode = 0
 script = ExtResource("1_2k3pa")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=659827049]
+[node name="Label" type="Label" parent="." unique_id=1032104534]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 129.0
+theme_override_font_sizes/font_size = 50
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="tile_pressed" from="." to="." method="_on_tile_pressed"]
