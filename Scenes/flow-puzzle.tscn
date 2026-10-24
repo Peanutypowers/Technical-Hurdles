@@ -27,6 +27,13 @@ offset_right = 9205.333
 offset_bottom = 3216.0
 texture = ExtResource("1_npav3")
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=453263370]
+offset_left = 456.0
+offset_top = 16.0
+offset_right = 1518.0
+offset_bottom = 1078.0
+texture = ExtResource("6_ifoe5")
+
 [node name="Flow Source 2" type="Area2D" parent="." unique_id=872802708 node_paths=PackedStringArray("near_node")]
 position = Vector2(1303, 267)
 script = ExtResource("1_2urg0")
@@ -309,10 +316,3 @@ needed_color = Color(0.2901961, 0.5254902, 0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flow Sink3" unique_id=669122494]
 shape = SubResource("RectangleShape2D_s7np4")
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=453263370]
-offset_left = 456.0
-offset_top = 16.0
-offset_right = 1518.0
-offset_bottom = 1078.0
-texture = ExtResource("6_ifoe5")
