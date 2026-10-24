@@ -13,3 +13,5 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_tnbny")
 tile_scene = ExtResource("2_2wvcj")
+
+[connection signal="game_won" from="." to="." method="_on_game_won"]

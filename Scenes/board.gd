@@ -7,12 +7,7 @@ extends Control
 
 var board = []
 var tiles = []
-var empty
-var is_animating = false
-var tiles_animating = 0
-
-var move_count = 0
-var background_texture = null
+var max_size = 0
 
 enum GAME_STATES {
 	NOT_STARTED,
@@ -36,24 +31,23 @@ func create_board():
 		board.append([])
 		for c in range(board_size):
 			var tile = tile_scene.instantiate()
-			tile.set_position(Vector2(c * tile_size, r * tile_size))
-			tile.set_scale(Vector2(0.60, 0.60))
+			tile.set_position(Vector2(c * tile_size * 2.75, r * tile_size * 2.75))
+			tile.scale = Vector2(0.01 * tile_size, 0.01 * tile_size)
 			tile.num = arr[r * board_size + c]
 			tile.row = r
 			tile.col = c
 			tile.tile_pressed.connect(_on_tile_pressed)
 			set_sprite(tile)
-			
-			if(tile.num == 0):
-				empty = tile.num
-			
+
 			add_child(tile)
 			board[r].append(tile)
 
 func set_sprite(tile):
 	for i in (board_size * board_size):
 		if i == tile.num:
-			tile.texture_normal = load("res://assets/tiles/tile0" + str(tile.num) + ".png")
+			tile.texture_normal = load("res://assets/tiles/tile" + str(tile.num) + ".png")
+			#tile.scale = Vector2(0.60, 0.60)
+			#tile.rect_scale = Vector2(0.60, 0.60)
 
 func move_tile():
 	pass
@@ -63,31 +57,35 @@ func _on_tile_pressed(num, row, col):
 	
 	var new_r
 	var new_c
-	if(num == 0):
+	if(num == max_size):
 		return
 		
 	# 0 is below
-	if((row + 1 < board_size) and (board[row + 1][col].num == 0)):
+	if((row + 1 < board_size) and (board[row + 1][col].num == max_size)):
 		new_r = row + 1
 		new_c = col
 	# 0 is to right
-	if((col + 1 < board_size) and (board[row][col + 1].num) == 0):
+	if((col + 1 < board_size) and (board[row][col + 1].num) == max_size):
 		new_r = row
 		new_c = col + 1
 	# 0 is above
-	if((row - 1 < board_size) and row - 1 >= 0 and (board[row - 1][col].num) == 0):
+	if((row - 1 < board_size) and row - 1 >= 0 and (board[row - 1][col].num) == max_size):
 		new_r = row - 1
 		new_c = col
 	# 0 is to left
-	if((col - 1 < board_size) and col - 1 >= 0 and (board[row][col - 1].num) == 0):
+	if((col - 1 < board_size) and col - 1 >= 0 and (board[row][col - 1].num) == max_size):
 		new_r = row
 		new_c = col - 1
 	
 	# if next to 0, swap them
 	if(new_r != null):
 		# Swap them visually
-		board[row][col].set_position(Vector2(new_c * tile_size, new_r * tile_size))
-		board[new_r][new_c].set_position(Vector2(col * tile_size, row * tile_size))
+		var tween_1 = create_tween()
+		tween_1.tween_property(board[row][col], "position", Vector2(new_c * tile_size * 2.75, new_r * tile_size * 2.75), slide_dur)
+		#board[row][col].set_position(Vector2(new_c * tile_size * 2.75, new_r * tile_size * 2.75))
+		#board[new_r][new_c].set_position(Vector2(col * tile_size * 2.75, row * tile_size * 2.75))
+		var tween_2 = create_tween()
+		tween_2.tween_property(board[new_r][new_c], "position", Vector2(col * tile_size * 2.75, row * tile_size * 2.75), slide_dur)
 		
 		# Swap them in board
 		var temp = board[new_r][new_c]
@@ -108,14 +106,13 @@ func _on_tile_pressed(num, row, col):
 	# Check if board is in correct number order
 	var arr = []
 	for i in (board_size * board_size):
-		if i != 0:
-			arr.append(i)
-	arr.append(0) # have 0 be the last one
+		arr.append(i)
 	for r in range(board_size):
 		for c in range(board_size):
 			if(board[r][c].num != 0 and board[r][c].num != arr[r * board_size + c]):
 				return
 	game_state = GAME_STATES.WON
+	emit_signal("game_won")
 	print("you won1!")
 
 # temporary
@@ -123,4 +120,12 @@ func _ready():
 	#tile_size = floor(get_size().x / board_size)
 	#set_size(Vector2(tile_size * board_size, tile_size * board_size))
 	#gen_board()
+	max_size = (board_size * board_size) - 1
 	create_board()
+
+
+func _on_game_won() -> void:
+	for r in range(board_size):
+		for c in range(board_size):
+			board[r][c].num = ' ' # i don't know if this works.
+	pass # Replace with function body.
