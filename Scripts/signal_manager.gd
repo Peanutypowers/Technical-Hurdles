@@ -11,3 +11,7 @@ func _process(delta: float) -> void:
 	
 func _progress_bar_broken() -> void:
 	progress_bar_broken.emit()
+
+
+func _on_timer_timeout() -> void:
+	print("yay!")

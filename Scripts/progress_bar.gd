@@ -19,11 +19,11 @@ func _process(delta: float) -> void:
 		size.x += randfn(1.0, 2.0)
 	if size.x > 511:
 		button_load = false
-	if mouse_pressed:
+	if mouse_pressed and animation_check:
 		mouse_pos = get_viewport().get_mouse_position().x
 		size.x = mouse_pos - 486
-	if size.x >= 1020:
-		size.x = 1019
+	if size.x >= 1018:
+		size.x = 1017
 	
 	if size.x >= 900 and !progress_break_check:
 		progress_break_flag += 1
@@ -38,6 +38,9 @@ func _process(delta: float) -> void:
 		if animation_check:
 			$FractureAnimation.visible = true
 			$FractureAnimation.play()
+			$"../CanvasLayer/Right/BlackBarFractureAnimation".visible = true
+			$"../CanvasLayer/Right/BlackBarFractureAnimation".play()
+			size.x = 1015
 			animation_check = false
 		
 
