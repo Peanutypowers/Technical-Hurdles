@@ -42,6 +42,7 @@ func create_board():
 			tile.row = r
 			tile.col = c
 			tile.tile_pressed.connect(_on_tile_pressed)
+			set_sprite(tile)
 			
 			if(tile.num == 0):
 				empty = tile.num
@@ -49,10 +50,10 @@ func create_board():
 			add_child(tile)
 			board[r].append(tile)
 
-#func set_sprite(tile):
-	#for i in (board_size * board_size):
-		#if i == tile.num:
-			#tile.texture_normal = preload("res://")
+func set_sprite(tile):
+	for i in (board_size * board_size):
+		if i == tile.num:
+			tile.texture_normal = load("res://assets/tiles/tile0" + str(tile.num) + ".png")
 
 func move_tile():
 	pass
