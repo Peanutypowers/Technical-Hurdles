@@ -27,9 +27,12 @@ func regen_texture() -> void:
 	match WaveType:
 		WaveType.Box:
 			for x in range(width):
-				#img.set_pixel(x, )
+				var amp: int = floor(x / frequency_slider.value) % 2 == 0;
+				img.set_pixel(x, round(amp * amplitude_slider.value), foreground_color);
 				pass
 		WaveType.Triangle:
 			pass
 		WaveType.Sine:
 			pass 
+			
+	self.texture = ImageTexture.create_from_image(img);

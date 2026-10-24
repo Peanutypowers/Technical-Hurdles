@@ -21,6 +21,7 @@ texture = ExtResource("1_3ji6t")
 script = ExtResource("1_eu0os")
 frequency_slider = NodePath("../Sliders/VSlider")
 amplitude_slider = NodePath("../Sliders/VSlider2")
+foreground_color = Color(1, 1, 1, 1)
 
 [node name="Sliders" type="BoxContainer" parent="BoxContainer" unique_id=1580813362]
 layout_mode = 2
