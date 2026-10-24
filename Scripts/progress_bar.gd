@@ -1,5 +1,7 @@
 extends TextureRect
 
+signal progress_bar_broken
+
 var mouse_pos
 var mouse_pressed = false
 var progress_break_flag = 0
@@ -24,6 +26,9 @@ func _process(delta: float) -> void:
 	
 	if size.x < 600:
 		progress_break_check = false
+	
+	if progress_break_flag >= 3:
+		progress_bar_broken.emit()
 
 
 func _on_area_2d_update_progress_bar(button_pressed) -> void:
