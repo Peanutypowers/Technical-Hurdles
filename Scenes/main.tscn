@@ -245,6 +245,7 @@ texture = ExtResource("9_b3802")
 script = ExtResource("11_h1bgf")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Loading Screen" unique_id=24885469]
+visible = false
 
 [node name="Left" type="ColorRect" parent="Loading Screen/CanvasLayer" unique_id=1376877937]
 offset_right = 420.0
@@ -291,26 +292,26 @@ texture_normal = ExtResource("2_kry3j")
 script = ExtResource("7_6bp64")
 
 [node name="WavePuzzleButton" type="TextureButton" parent="." unique_id=302377547]
-offset_left = 5.0
-offset_top = 292.0
-offset_right = 413.0
-offset_bottom = 700.0
+offset_left = 112.0
+offset_top = 450.0
+offset_right = 352.0
+offset_bottom = 690.0
 texture_normal = ExtResource("20_gt3je")
 script = ExtResource("18_b3802")
 
 [node name="SlidePuzzleButton" type="TextureButton" parent="." unique_id=1339522319]
-offset_left = 1507.0
-offset_top = 59.0
-offset_right = 1915.0
-offset_bottom = 467.0
+offset_left = 1594.0
+offset_top = 144.0
+offset_right = 1834.0
+offset_bottom = 384.0
 texture_normal = ExtResource("20_gt3je")
 script = ExtResource("19_fevyy")
 
 [node name="FlowPuzzleButton" type="TextureButton" parent="." unique_id=1491389394]
-offset_left = 1507.0
-offset_top = 612.0
-offset_right = 1915.0
-offset_bottom = 1020.0
+offset_left = 1594.0
+offset_top = 697.0
+offset_right = 1834.0
+offset_bottom = 937.0
 texture_normal = ExtResource("20_gt3je")
 script = ExtResource("20_hibaj")
 
