@@ -13,7 +13,6 @@ func _process(delta: float) -> void:
 
 func _on_texture_rect_progress_bar_broken() -> void:
 	start()
-	print("test2")
 
 
 func _on_timeout() -> void:
