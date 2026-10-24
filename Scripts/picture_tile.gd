@@ -7,7 +7,7 @@ var col
 signal tile_pressed
 
 func _ready():
-	$Label.text = str(num)
+	$Label.text = str(num + 1)
 
 
 
