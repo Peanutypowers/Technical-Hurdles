@@ -1,0 +1,280 @@
+[gd_scene format=3 uid="uid://dhxexw1eco51j"]
+
+[ext_resource type="Script" uid="uid://ca6wycfl8bkuj" path="res://Scripts/flow_source.gd" id="1_2urg0"]
+[ext_resource type="Script" uid="uid://bef25qwtvhpv" path="res://Scripts/pipe.gd" id="2_1tef5"]
+[ext_resource type="Script" uid="uid://c0h1t2tk4nhii" path="res://Scripts/flow-sink.gd" id="3_87rtb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w74sn"]
+size = Vector2(100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4qjb2"]
+size = Vector2(100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7np4"]
+size = Vector2(100, 100)
+
+[node name="FlowPuzzle" type="Node2D" unique_id=1137744596]
+metadata/flow_frequency = 3000
+
+[node name="Flow Source 2" type="Area2D" parent="." unique_id=872802708 node_paths=PackedStringArray("near_node")]
+position = Vector2(1303, 267)
+script = ExtResource("1_2urg0")
+near_node = NodePath("../PipeGrid/Pipe51")
+direction_of_node = 1
+pulse_color = Color(0.27162445, 0.40188864, 0.8870793, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flow Source 2" unique_id=581687606]
+shape = SubResource("RectangleShape2D_w74sn")
+
+[node name="Flow Source" type="Area2D" parent="." unique_id=1553473178 node_paths=PackedStringArray("near_node")]
+position = Vector2(703, 267)
+script = ExtResource("1_2urg0")
+near_node = NodePath("../PipeGrid/Pipe11")
+direction_of_node = 3
+pulse_color = Color(0.85490197, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flow Source" unique_id=2098682154]
+shape = SubResource("RectangleShape2D_w74sn")
+
+[node name="Flow Source 3" type="Area2D" parent="." unique_id=1635714024 node_paths=PackedStringArray("near_node")]
+position = Vector2(1003, 767)
+script = ExtResource("1_2urg0")
+near_node = NodePath("../PipeGrid/Pipe35")
+direction_of_node = 2
+pulse_color = Color(0.29112902, 0.5247684, 5.7756904e-07, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flow Source 3" unique_id=1233837534]
+shape = SubResource("RectangleShape2D_w74sn")
+
+[node name="PipeGrid" type="Node2D" parent="." unique_id=350414912]
+
+[node name="Pipe31" type="Area2D" parent="PipeGrid" unique_id=125585538]
+position = Vector2(953, 217)
+script = ExtResource("2_1tef5")
+type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeGrid/Pipe31" unique_id=951637446]
+position = Vector2(50, 50)
+shape = SubResource("RectangleShape2D_4qjb2")
+
+[node name="Pipe32" type="Area2D" parent="PipeGrid" unique_id=1063566742]
+position = Vector2(953, 317)
+script = ExtResource("2_1tef5")
+type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeGrid/Pipe32" unique_id=1344929917]
+position = Vector2(50, 50)
+shape = SubResource("RectangleShape2D_4qjb2")
+
+[node name="Pipe33" type="Area2D" parent="PipeGrid" unique_id=1467461450]
+position = Vector2(953, 417)
+script = ExtResource("2_1tef5")
+type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeGrid/Pipe33" unique_id=694786111]
+position = Vector2(50, 50)
+shape = SubResource("RectangleShape2D_4qjb2")
+
+[node name="Pipe34" type="Area2D" parent="PipeGrid" unique_id=1226206180]
+position = Vector2(953, 517)
+script = ExtResource("2_1tef5")
+type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeGrid/Pipe34" unique_id=1014878547]
+position = Vector2(50, 50)
+shape = SubResource("RectangleShape2D_4qjb2")
+
+[node name="Pipe35" type="Area2D" parent="PipeGrid" unique_id=728635088]
+position = Vector2(953, 617)
+script = ExtResource("2_1tef5")
+type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeGrid/Pipe35" unique_id=1610369460]
+position = Vector2(50, 50)
+shape = SubResource("RectangleShape2D_4qjb2")
+
+[node name="Pipe21" type="Area2D" parent="PipeGrid" unique_id=1053620689]
+position = Vector2(853, 217)
+script = ExtResource("2_1tef5")
+type = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeGrid/Pipe21" unique_id=32134005]
+position = Vector2(50, 50)
+shape = SubResource("RectangleShape2D_4qjb2")
+
+[node name="Pipe22" type="Area2D" parent="PipeGrid" unique_id=2053474581]
+position = Vector2(853, 317)
+script = ExtResource("2_1tef5")
+type = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeGrid/Pipe22" unique_id=1721599669]
+position = Vector2(50, 50)
+shape = SubResource("RectangleShape2D_4qjb2")
+
+[node name="Pipe23" type="Area2D" parent="PipeGrid" unique_id=1596808149]
+position = Vector2(853, 417)
+script = ExtResource("2_1tef5")
+type = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeGrid/Pipe23" unique_id=1016374358]
+position = Vector2(50, 50)
+shape = SubResource("RectangleShape2D_4qjb2")
+
+[node name="Pipe24" type="Area2D" parent="PipeGrid" unique_id=1287145537]
+position = Vector2(853, 517)
+script = ExtResource("2_1tef5")
+type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeGrid/Pipe24" unique_id=116897635]
+position = Vector2(50, 50)
+shape = SubResource("RectangleShape2D_4qjb2")
+
+[node name="Pipe25" type="Area2D" parent="PipeGrid" unique_id=1271875894]
+position = Vector2(853, 617)
+script = ExtResource("2_1tef5")
+type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeGrid/Pipe25" unique_id=797155486]
+position = Vector2(50, 50)
+shape = SubResource("RectangleShape2D_4qjb2")
+
+[node name="Pipe41" type="Area2D" parent="PipeGrid" unique_id=823643965]
+position = Vector2(1053, 217)
+script = ExtResource("2_1tef5")
+type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeGrid/Pipe41" unique_id=155970051]
+position = Vector2(50, 50)
+shape = SubResource("RectangleShape2D_4qjb2")
+
+[node name="Pipe42" type="Area2D" parent="PipeGrid" unique_id=1141853898]
+position = Vector2(1053, 317)
+script = ExtResource("2_1tef5")
+type = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeGrid/Pipe42" unique_id=1596768354]
+position = Vector2(50, 50)
+shape = SubResource("RectangleShape2D_4qjb2")
+
+[node name="Pipe43" type="Area2D" parent="PipeGrid" unique_id=633657997]
+position = Vector2(1053, 417)
+script = ExtResource("2_1tef5")
+type = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeGrid/Pipe43" unique_id=1937620361]
+position = Vector2(50, 50)
+shape = SubResource("RectangleShape2D_4qjb2")
+
+[node name="Pipe44" type="Area2D" parent="PipeGrid" unique_id=409838687]
+position = Vector2(1053, 517)
+script = ExtResource("2_1tef5")
+type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeGrid/Pipe44" unique_id=644224863]
+position = Vector2(50, 50)
+shape = SubResource("RectangleShape2D_4qjb2")
+
+[node name="Pipe45" type="Area2D" parent="PipeGrid" unique_id=291447195]
+position = Vector2(1053, 617)
+script = ExtResource("2_1tef5")
+type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeGrid/Pipe45" unique_id=49787635]
+position = Vector2(50, 50)
+shape = SubResource("RectangleShape2D_4qjb2")
+
+[node name="Pipe11" type="Area2D" parent="PipeGrid" unique_id=432487525]
+position = Vector2(753, 217)
+script = ExtResource("2_1tef5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeGrid/Pipe11" unique_id=1338930517]
+position = Vector2(50, 50)
+shape = SubResource("RectangleShape2D_4qjb2")
+
+[node name="Pipe12" type="Area2D" parent="PipeGrid" unique_id=373952201]
+position = Vector2(753, 317)
+script = ExtResource("2_1tef5")
+type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeGrid/Pipe12" unique_id=343485216]
+position = Vector2(50, 50)
+shape = SubResource("RectangleShape2D_4qjb2")
+
+[node name="Pipe13" type="Area2D" parent="PipeGrid" unique_id=962445704]
+position = Vector2(753, 417)
+script = ExtResource("2_1tef5")
+type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeGrid/Pipe13" unique_id=1701899622]
+position = Vector2(50, 50)
+shape = SubResource("RectangleShape2D_4qjb2")
+
+[node name="Pipe14" type="Area2D" parent="PipeGrid" unique_id=1258910546]
+position = Vector2(753, 517)
+script = ExtResource("2_1tef5")
+type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeGrid/Pipe14" unique_id=1344988507]
+position = Vector2(50, 50)
+shape = SubResource("RectangleShape2D_4qjb2")
+
+[node name="Pipe15" type="Area2D" parent="PipeGrid" unique_id=582086908]
+position = Vector2(753, 617)
+script = ExtResource("2_1tef5")
+type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeGrid/Pipe15" unique_id=1195279470]
+position = Vector2(50, 50)
+shape = SubResource("RectangleShape2D_4qjb2")
+
+[node name="Pipe51" type="Area2D" parent="PipeGrid" unique_id=481138504]
+position = Vector2(1153, 217)
+script = ExtResource("2_1tef5")
+type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeGrid/Pipe51" unique_id=299139410]
+position = Vector2(50, 50)
+shape = SubResource("RectangleShape2D_4qjb2")
+
+[node name="Pipe52" type="Area2D" parent="PipeGrid" unique_id=1110395745]
+position = Vector2(1153, 317)
+script = ExtResource("2_1tef5")
+type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeGrid/Pipe52" unique_id=1954610373]
+position = Vector2(50, 50)
+shape = SubResource("RectangleShape2D_4qjb2")
+
+[node name="Pipe53" type="Area2D" parent="PipeGrid" unique_id=307079844]
+position = Vector2(1153, 417)
+script = ExtResource("2_1tef5")
+type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeGrid/Pipe53" unique_id=16397911]
+position = Vector2(50, 50)
+shape = SubResource("RectangleShape2D_4qjb2")
+
+[node name="Pipe54" type="Area2D" parent="PipeGrid" unique_id=989803545]
+position = Vector2(1153, 517)
+script = ExtResource("2_1tef5")
+type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeGrid/Pipe54" unique_id=1029238197]
+position = Vector2(50, 50)
+shape = SubResource("RectangleShape2D_4qjb2")
+
+[node name="Pipe55" type="Area2D" parent="PipeGrid" unique_id=543538022]
+position = Vector2(1153, 617)
+script = ExtResource("2_1tef5")
+type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeGrid/Pipe55" unique_id=1830601770]
+position = Vector2(50, 50)
+shape = SubResource("RectangleShape2D_4qjb2")
+
+[node name="Flow Sink" type="Area2D" parent="." unique_id=1142418292]
+position = Vector2(703, 467)
+script = ExtResource("3_87rtb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flow Sink" unique_id=799269015]
+shape = SubResource("RectangleShape2D_s7np4")
