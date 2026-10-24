@@ -245,7 +245,6 @@ texture = ExtResource("9_b3802")
 script = ExtResource("11_h1bgf")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Loading Screen" unique_id=24885469]
-visible = false
 
 [node name="Left" type="ColorRect" parent="Loading Screen/CanvasLayer" unique_id=1376877937]
 offset_right = 420.0

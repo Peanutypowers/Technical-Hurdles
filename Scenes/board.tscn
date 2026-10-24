@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dqbpedg57s20h" path="res://Scenes/board.gd" id="1_tnbny"]
 [ext_resource type="PackedScene" uid="uid://b45jswb5kfumd" path="res://Scenes/picture_tile.tscn" id="2_2wvcj"]
+[ext_resource type="Texture2D" uid="uid://cbj1pxynuc1hv" path="res://assets/Cooper1.png" id="3_shhme"]
+[ext_resource type="Texture2D" uid="uid://7ekamrc7akw" path="res://assets/screwplateempty.png" id="3_uh3b8"]
 
 [node name="Board" type="Control" unique_id=1164630265]
 layout_mode = 3
@@ -13,5 +15,21 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_tnbny")
 tile_scene = ExtResource("2_2wvcj")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1023931252]
+layout_mode = 0
+offset_left = -7352.0
+offset_top = -4064.0
+offset_right = 2077.333
+offset_bottom = 1240.0
+texture = ExtResource("3_shhme")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1029146852]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 16.0
+offset_right = 1502.0
+offset_bottom = 1078.0
+texture = ExtResource("3_uh3b8")
 
 [connection signal="game_won" from="." to="." method="_on_game_won"]

@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://30tpdglh7wfe" path="res://Scenes/wave-plot.tscn" id="1_04gcx"]
 [ext_resource type="Script" uid="uid://6you745oj8vc" path="res://Scenes/sine_wave_puzzle.gd" id="1_27g4t"]
 [ext_resource type="PackedScene" uid="uid://bidibsdr6abge" path="res://Scenes/wave-plot-goal.tscn" id="1_t5fve"]
+[ext_resource type="Texture2D" uid="uid://7ekamrc7akw" path="res://assets/screwplateempty.png" id="2_an0m1"]
+[ext_resource type="Texture2D" uid="uid://cbj1pxynuc1hv" path="res://assets/Cooper1.png" id="5_ls73o"]
 
 [node name="SineWavePuzzle" type="Control" unique_id=1143714329]
 layout_mode = 3
@@ -11,6 +13,22 @@ anchor_left = 0.5
 anchor_right = 0.5
 grow_horizontal = 2
 script = ExtResource("1_27g4t")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1036530018]
+layout_mode = 0
+offset_left = -8272.0
+offset_top = -1192.0
+offset_right = 1157.333
+offset_bottom = 4112.0
+texture = ExtResource("5_ls73o")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=717180883]
+layout_mode = 0
+offset_left = -534.0
+offset_top = 16.0
+offset_right = 528.0
+offset_bottom = 1078.0
+texture = ExtResource("2_an0m1")
 
 [node name="Container" type="VBoxContainer" parent="." unique_id=268431981]
 layout_mode = 0
