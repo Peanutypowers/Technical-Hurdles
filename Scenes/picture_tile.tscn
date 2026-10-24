@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b45jswb5kfumd"]
 
-[ext_resource type="Script" uid="uid://dmmyg0cjb61e3" path="res://Scenes/picture_tile.gd" id="1_2k3pa"]
+[ext_resource type="Script" uid="uid://dmmyg0cjb61e3" path="res://Scripts/picture_tile.gd" id="1_2k3pa"]
 
 [node name="Picture Tile" type="TextureButton" unique_id=1339828254]
 script = ExtResource("1_2k3pa")
