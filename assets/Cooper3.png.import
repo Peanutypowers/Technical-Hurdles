@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvruxd33u13s6"
-path="res://.godot/imported/bar_CrackSheet.png-98db5999e851ae05d4014d3021e6b394.ctex"
+uid="uid://c1kspol3mkvyi"
+path="res://.godot/imported/Cooper3.png-f280861914bf02d99dae531c0cc6895d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bar_CrackSheet.png"
-dest_files=["res://.godot/imported/bar_CrackSheet.png-98db5999e851ae05d4014d3021e6b394.ctex"]
+source_file="res://assets/Cooper3.png"
+dest_files=["res://.godot/imported/Cooper3.png-f280861914bf02d99dae531c0cc6895d.ctex"]
 
 [params]
 

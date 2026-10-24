@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4v25lcn2gnpr"
-path="res://.godot/imported/blackBar_crack.png-fe8759843f757d680b5e2fd4f0549725.ctex"
+uid="uid://dc4opx6p43352"
+path="res://.godot/imported/Cooper2.png-7c457d94c222197f67c2125dd37441b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://blackBar_crack.png"
-dest_files=["res://.godot/imported/blackBar_crack.png-fe8759843f757d680b5e2fd4f0549725.ctex"]
+source_file="res://assets/Cooper2.png"
+dest_files=["res://.godot/imported/Cooper2.png-7c457d94c222197f67c2125dd37441b3.ctex"]
 
 [params]
 

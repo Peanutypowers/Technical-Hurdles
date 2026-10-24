@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5a5byfd4w7ew"
-path="res://.godot/imported/MasterTilesetTinyt.png-bcaa3398c0ad04eb92d7e8f4a0a7b17d.ctex"
+uid="uid://drsramn5ot08e"
+path="res://.godot/imported/TheRed.png-5f9b0250624620ff848514c9fa3a6414.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MasterTilesetTinyt.png"
-dest_files=["res://.godot/imported/MasterTilesetTinyt.png-bcaa3398c0ad04eb92d7e8f4a0a7b17d.ctex"]
+source_file="res://assets/TheRed.png"
+dest_files=["res://.godot/imported/TheRed.png-5f9b0250624620ff848514c9fa3a6414.ctex"]
 
 [params]
 

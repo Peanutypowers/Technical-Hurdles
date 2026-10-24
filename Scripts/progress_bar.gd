@@ -18,6 +18,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if button_load and size.x <= 512:
 		size.x += randfn(1.0, 2.0)
+	
+		#$"../../TitleBackground".texture = load('res://assets/Cooper2.png')
 	if size.x > 511:
 		button_load = false
 	if mouse_pressed and animation_check:
