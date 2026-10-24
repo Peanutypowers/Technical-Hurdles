@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://bd4661b3xo515" path="res://Scripts/progress_bar_collider.gd" id="3_jjvhh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7u77a"]
-size = Vector2(599, 61)
+size = Vector2(940.5, 126)
 
 [node name="Signal Manager" type="Node2D" unique_id=740488106]
 script = ExtResource("1_8gbba")
@@ -15,21 +15,24 @@ script = ExtResource("1_8gbba")
 [node name="Loading Screen" type="Node2D" parent="." unique_id=1827226046]
 
 [node name="TextureRect" type="TextureRect" parent="Loading Screen" unique_id=2002145916]
-offset_left = 657.0
-offset_top = 392.0
-offset_right = 785.0
-offset_bottom = 520.0
+offset_left = 486.0
+offset_top = 394.0
+offset_right = 614.0
+offset_bottom = 522.0
 texture = ExtResource("2_kry3j")
 script = ExtResource("1_bo1nx")
 
 [node name="Area2D" type="Area2D" parent="Loading Screen/TextureRect" unique_id=215111722]
 z_index = 1
-position = Vector2(303, 68)
+position = Vector2(473, 60)
 script = ExtResource("3_jjvhh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Loading Screen/TextureRect/Area2D" unique_id=670854762]
 z_index = 1
+position = Vector2(-3, 3)
 shape = SubResource("RectangleShape2D_7u77a")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Loading Screen/TextureRect" unique_id=777945040]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Loading Screen" unique_id=24885469]
 
