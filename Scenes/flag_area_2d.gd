@@ -1,5 +1,7 @@
 extends Area2D
 
+@export var scene:= "res://Scenes/platformer.tscn"
 
-func _on_area_entered(area: Area2D) -> void:
-	SceneManager.change_scene("res://Scenes/platformer.tscn")
+func _on_body_entered(body: Node2D) -> void:
+	print("Yay")
+	SceneManager.change_scene(scene)
