@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-
+@export var respawn_point:= Vector2(504, 741)
 var speed = 300.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -800.0
 
 
 func _physics_process(delta: float) -> void:
@@ -27,6 +27,6 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		
 	if $".".position.y > 1200:
-		$".".position = Vector2(504, 741)
+		$".".position = respawn_point
 
 	move_and_slide()
