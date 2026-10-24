@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://j76bkan0tx2n" path="res://Scripts/fracture_3.gd" id="11_h1bgf"]
 [ext_resource type="Script" uid="uid://nrox4ssfltsx" path="res://Scenes/wave_puzzle_button.gd" id="18_b3802"]
 [ext_resource type="Script" uid="uid://cw3hj2rmmf8w4" path="res://Scenes/slide_puzzle_button.gd" id="19_fevyy"]
+[ext_resource type="Texture2D" uid="uid://b88y6saa8ba6n" path="res://assets/screwplateshiny.png" id="20_gt3je"]
 [ext_resource type="Script" uid="uid://bnybtpi7qpdh7" path="res://Scenes/flow_puzzle_button.gd" id="20_hibaj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ynf5e"]
@@ -294,7 +295,7 @@ offset_left = 5.0
 offset_top = 292.0
 offset_right = 413.0
 offset_bottom = 700.0
-texture_normal = ExtResource("2_kry3j")
+texture_normal = ExtResource("20_gt3je")
 script = ExtResource("18_b3802")
 
 [node name="SlidePuzzleButton" type="TextureButton" parent="." unique_id=1339522319]
@@ -302,7 +303,7 @@ offset_left = 1507.0
 offset_top = 59.0
 offset_right = 1915.0
 offset_bottom = 467.0
-texture_normal = ExtResource("2_kry3j")
+texture_normal = ExtResource("20_gt3je")
 script = ExtResource("19_fevyy")
 
 [node name="FlowPuzzleButton" type="TextureButton" parent="." unique_id=1491389394]
@@ -310,7 +311,7 @@ offset_left = 1507.0
 offset_top = 612.0
 offset_right = 1915.0
 offset_bottom = 1020.0
-texture_normal = ExtResource("2_kry3j")
+texture_normal = ExtResource("20_gt3je")
 script = ExtResource("20_hibaj")
 
 [connection signal="progress_bar_broken" from="." to="Loading Screen/CanvasLayer/Left" method="_progress_bar_broken"]
