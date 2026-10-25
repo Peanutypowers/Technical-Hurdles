@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bidibsdr6abge" path="res://Scenes/wave-plot-goal.tscn" id="1_t5fve"]
 [ext_resource type="Texture2D" uid="uid://7ekamrc7akw" path="res://assets/screwplateempty.png" id="2_an0m1"]
 [ext_resource type="Texture2D" uid="uid://cbj1pxynuc1hv" path="res://assets/Cooper1.png" id="5_ls73o"]
+[ext_resource type="Texture2D" uid="uid://2cgvaju1xlcp" path="res://assets/wavetext.png" id="6_ik0xk"]
 
 [node name="SineWavePuzzle" type="Control" unique_id=1143714329]
 layout_mode = 3
@@ -60,3 +61,11 @@ foreground_color = Color(0.5294118, 0.80784315, 0.92156863, 1)
 layout_mode = 2
 type = 2
 foreground_color = Color(0.5764706, 0.4392157, 0.85882354, 1)
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=915047133]
+layout_mode = 0
+offset_left = -585.0
+offset_top = 896.0
+offset_right = 501.0
+offset_bottom = 1094.0
+texture = ExtResource("6_ik0xk")

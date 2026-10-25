@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://c0x7oyj4iqlak" path="res://Scripts/flow-sink-2.gd" id="4_4kqtu"]
 [ext_resource type="Script" uid="uid://urcb3mwjcaag" path="res://Scripts/flow-sink-3.gd" id="5_sjb18"]
 [ext_resource type="Texture2D" uid="uid://7ekamrc7akw" path="res://assets/screwplateempty.png" id="6_ifoe5"]
+[ext_resource type="Texture2D" uid="uid://caqlohv5olj84" path="res://assets/flowtext.png" id="8_58tsi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w74sn"]
 size = Vector2(100, 100)
@@ -316,3 +317,11 @@ needed_color = Color(0.2901961, 0.5254902, 0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flow Sink3" unique_id=669122494]
 shape = SubResource("RectangleShape2D_s7np4")
+
+[node name="Text" type="TextureRect" parent="." unique_id=823696452]
+offset_left = 449.0
+offset_top = 816.0
+offset_right = 1473.9965
+offset_bottom = 1037.0
+texture = ExtResource("8_58tsi")
+expand_mode = 1
