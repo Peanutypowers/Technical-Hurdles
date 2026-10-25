@@ -328,6 +328,8 @@ script = ExtResource("20_hibaj")
 [connection signal="cooper_image_3" from="Loading Screen/TextureRect" to="Loading Screen/TitleBackground" method="_cooper_image_3"]
 [connection signal="cooper_image_4" from="Loading Screen/TextureRect" to="Loading Screen/TitleBackground" method="_cooper_image_4"]
 [connection signal="cooper_image_5" from="Loading Screen/TextureRect" to="Loading Screen/TitleBackground" method="_cooper_image_5"]
+[connection signal="cooper_image_6" from="Loading Screen/TextureRect" to="Loading Screen/TitleBackground" method="_cooper_image_6"]
+[connection signal="cooper_image_7" from="Loading Screen/TextureRect" to="Loading Screen/TitleBackground" method="_cooper_image_7"]
 [connection signal="progress_bar_broken" from="Loading Screen/TextureRect" to="." method="_progress_bar_broken"]
 [connection signal="progress_bar_broken" from="Loading Screen/TextureRect" to="Loading Screen/TextureRect/Fracture1" method="_progress_bar_broken"]
 [connection signal="progress_bar_broken" from="Loading Screen/TextureRect" to="Loading Screen/TextureRect/Fracture2" method="_progress_bar_broken"]

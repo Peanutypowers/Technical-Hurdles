@@ -1,10 +1,12 @@
 extends TextureRect
 
 signal progress_bar_broken
-signal cooper_image_2
+signal 	cooper_image_2
 signal 	cooper_image_3
 signal 	cooper_image_4
 signal 	cooper_image_5
+signal 	cooper_image_6
+signal cooper_image_7
 
 var mouse_pos
 var mouse_pressed = false
@@ -27,11 +29,15 @@ var oneshot5 = false
 var oneshot5_ = false
 @export var dialogue_time = 3.0
 
+@onready var audio_player: AudioStreamPlayer = AudioStreamPlayer.new()
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var progress_collider = get_node("Area2D")
 	add_child(new_timer)
 	new_timer.timeout.connect(_on_timer_timeout)
+	
+	add_child(audio_player)
 
 func _on_timer_timeout() -> void:
 	if oneshot3_ == false :
@@ -84,6 +90,10 @@ func _process(delta: float) -> void:
 	
 	if progress_break_flag >= 3 and !completed_fracture:
 		progress_bar_broken.emit()
+		
+		cooper_image_6.emit()
+		audio_player.stream = load("res://assets/shatter.mp3") as AudioStreamMP3
+		audio_player.play()
 		if animation_check:
 			$FractureAnimation.visible = true
 			$FractureAnimation.play()
@@ -92,6 +102,9 @@ func _process(delta: float) -> void:
 			size.x = 1015
 			animation_check = false
 			completed_fracture = true
+		
+		#await get_tree().create_timer(3.0).timeout
+		cooper_image_7.emit()
 		
 
 
