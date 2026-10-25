@@ -114,9 +114,6 @@ func _on_tile_pressed(num, row, col):
 	game_state = GAME_STATES.WON
 	
 	SceneManager.change_scene("res://Scenes/Platformer2.tscn")
-	
-	get_node("/root/board").free()
-	print("you won1!")
 
 # temporary
 func _ready():
