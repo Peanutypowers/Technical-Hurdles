@@ -3,6 +3,8 @@ extends TextureRect
 signal progress_bar_broken
 signal cooper_image_2
 signal 	cooper_image_3
+signal 	cooper_image_4
+signal 	cooper_image_5
 
 var mouse_pos
 var mouse_pressed = false
@@ -17,6 +19,13 @@ var new_timer = Timer.new()
 var cooper_image_2_bool = false
 
 var oneshot3 = false
+var oneshot3_ = false
+var oneshot2 = false
+var oneshot4 = false
+var oneshot4_ = false
+var oneshot5 = false
+var oneshot5_ = false
+@export var dialogue_time = 3.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -25,21 +34,37 @@ func _ready() -> void:
 	new_timer.timeout.connect(_on_timer_timeout)
 
 func _on_timer_timeout() -> void:
-	cooper_image_3.emit()
+	if oneshot3_ == false :
+		cooper_image_3.emit()
+		oneshot3_ = true
+	if oneshot3_ == true && oneshot4_ == false :
+		cooper_image_4.emit()
+		oneshot4_ = true
+	if oneshot4_ == true && oneshot5_ == false :
+		cooper_image_5.emit()
+		oneshot5_ = true
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if button_load and size.x <= 512:
 		size.x += randfn(1.0, 2.0)
-	if size.x >= 500:
+	if size.x >= 500 && oneshot2 == false:
 		cooper_image_2.emit()
 		cooper_image_2_bool = true
+		oneshot2 = true
 	
 	if cooper_image_2_bool && oneshot3 == false:
-		print("cooper 3")
-		new_timer.start(1)
+		new_timer.start(dialogue_time)
 		cooper_image_2_bool = false
 		oneshot3 = true
+	
+	if oneshot3 == true && oneshot4 == false:
+		new_timer.start(dialogue_time)
+		oneshot4 = true
+
+	if oneshot4 == true && oneshot5 == false:
+		new_timer.start(dialogue_time)
+		oneshot5 = true
 		
 	
 	if size.x > 511:

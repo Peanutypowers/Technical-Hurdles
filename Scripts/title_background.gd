@@ -15,3 +15,7 @@ func _cooper_image_2() -> void:
 	$".".texture = load("res://assets/Cooper2.png")
 func _cooper_image_3() -> void:
 	$".".texture = load("res://assets/Cooper2b.png")
+func _cooper_image_4() -> void:
+	$".".texture = load("res://assets/Cooper3.png")
+func _cooper_image_5() -> void:
+	$".".texture = load("res://assets/Cooper4.png")
