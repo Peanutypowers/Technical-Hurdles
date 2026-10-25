@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://b0wiuy1sj0c2s" path="res://Scenes/flag_area_2d.gd" id="5_xp55e"]
 [ext_resource type="Script" uid="uid://bls0ma7w114dq" path="res://Scripts/black_bar.gd" id="7_l2b43"]
 [ext_resource type="Texture2D" uid="uid://c4v25lcn2gnpr" path="res://assets/blackBar_crack.png" id="8_8of63"]
+[ext_resource type="Texture2D" uid="uid://6w55ag6xblen" path="res://assets/PressAltToRun.png" id="9_l2b43"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_emsnq"]
 radius = 18.0
@@ -226,6 +227,14 @@ visible = false
 position = Vector2(212.99998, 534.00006)
 scale = Vector2(4.00207, 4.110814)
 sprite_frames = SubResource("SpriteFrames_k2fng")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1023676742]
+offset_left = 476.0
+offset_top = -362.0
+offset_right = 2476.0
+offset_bottom = 1888.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_l2b43")
 
 [connection signal="area_entered" from="flag_waving/Area2D" to="flag_waving/Area2D" method="_on_area_entered"]
 [connection signal="body_entered" from="flag_waving/Area2D" to="flag_waving/Area2D" method="_on_body_entered"]

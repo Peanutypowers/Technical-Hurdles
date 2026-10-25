@@ -1,10 +1,12 @@
 extends TextureRect
 
 signal progress_bar_broken
-signal cooper_image_2
+signal 	cooper_image_2
 signal 	cooper_image_3
 signal 	cooper_image_4
 signal 	cooper_image_5
+signal 	cooper_image_6
+signal cooper_image_7
 
 var mouse_pos
 var mouse_pressed = false
@@ -84,6 +86,10 @@ func _process(delta: float) -> void:
 	
 	if progress_break_flag >= 3 and !completed_fracture:
 		progress_bar_broken.emit()
+		cooper_image_6.emit()
+		await get_tree().create_timer(3.0).timeout
+		cooper_image_7.emit()
+		
 		if animation_check:
 			$FractureAnimation.visible = true
 			$FractureAnimation.play()
