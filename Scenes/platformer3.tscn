@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dmmomiy81jnny" path="res://assets/Cooper_jump.png" id="5_qqa6s"]
 [ext_resource type="Texture2D" uid="uid://bp1ekrgxpl6jf" path="res://assets/Cooper_walking.png" id="6_0x0ox"]
 [ext_resource type="Texture2D" uid="uid://c4v25lcn2gnpr" path="res://assets/blackBar_crack.png" id="6_ixai1"]
+[ext_resource type="Texture2D" uid="uid://b6vovnwwns1wb" path="res://assets/RunAndJumpGaps.png" id="10_fmj5k"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_emsnq"]
 radius = 15.750061
@@ -171,7 +172,7 @@ shape = SubResource("CapsuleShape2D_emsnq")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_emsnq")
 animation = &"walking"
-frame_progress = 0.8222044
+frame_progress = 0.43641776
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=390226633]
 texture_filter = 1
@@ -218,3 +219,11 @@ visible = false
 position = Vector2(212.99998, 534.00006)
 scale = Vector2(4.00207, 4.110814)
 sprite_frames = SubResource("SpriteFrames_5nrer")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1070724603]
+offset_left = 460.0
+offset_top = -278.0
+offset_right = 2460.0
+offset_bottom = 1972.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_fmj5k")
