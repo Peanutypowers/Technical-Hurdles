@@ -81,11 +81,11 @@ func _on_tile_pressed(num, row, col):
 	if(new_r != null):
 		# Swap them visually
 		var tween_1 = create_tween()
-		tween_1.tween_property(board[row][col], "position", Vector2(new_c * tile_size * 2.75, new_r * tile_size * 2.75), slide_dur)
+		tween_1.tween_property(board[row][col], "position", Vector2(540 + (new_c * tile_size * 2.75), 100 +(new_r * tile_size * 2.75)), slide_dur)
 		#board[row][col].set_position(Vector2(new_c * tile_size * 2.75, new_r * tile_size * 2.75))
 		#board[new_r][new_c].set_position(Vector2(col * tile_size * 2.75, row * tile_size * 2.75))
 		var tween_2 = create_tween()
-		tween_2.tween_property(board[new_r][new_c], "position", Vector2(col * tile_size * 2.75, row * tile_size * 2.75), slide_dur)
+		tween_2.tween_property(board[new_r][new_c], "position", Vector2(540 + (col * tile_size * 2.75), 100 + (row * tile_size * 2.75)), slide_dur)
 		
 		# Swap them in board
 		var temp = board[new_r][new_c]

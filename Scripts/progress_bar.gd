@@ -20,7 +20,6 @@ var oneshot3 = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	oneshot3 = false
 	var progress_collider = get_node("Area2D")
 	add_child(new_timer)
 	new_timer.timeout.connect(_on_timer_timeout)
@@ -40,7 +39,7 @@ func _process(delta: float) -> void:
 		print("cooper 3")
 		new_timer.start(1)
 		cooper_image_2_bool = false
-		oneshot3 == true
+		oneshot3 = true
 		
 	
 	if size.x > 511:
