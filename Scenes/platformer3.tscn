@@ -150,7 +150,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Platformer" type="Node2D" unique_id=206407023]
+[node name="Platformer2" type="Node2D" unique_id=206407023]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=942237638]
 offset_left = 420.0

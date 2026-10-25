@@ -8,8 +8,4 @@ func _process(_delta: float) -> void:
 		if $"Flow Sink".satisfied:
 			if $"Flow Sink3".satisfied:
 				if $"Flow Sink2".satisfied:
-					print("won")
-					emit_signal("game_won", "flow")
-					get_node("/root/Signal Manager").visible = true
-					get_node("/root/FlowPuzzle").queue_free()
-					oneshot = true
+					SceneManager.change_scene("res://Scenes/Platformer2.tscn")

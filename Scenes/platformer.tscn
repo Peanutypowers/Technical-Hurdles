@@ -2,10 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://dfx5dwbvfnxsj" path="res://assets/backgroundArt.png" id="1_8y7vq"]
 [ext_resource type="Script" uid="uid://confi4dvy1t80" path="res://Scripts/platformer_character.gd" id="1_k0oe1"]
-[ext_resource type="Texture2D" uid="uid://b25unejel3w0j" path="res://assets/icon.svg" id="2_6hv7n"]
 [ext_resource type="Texture2D" uid="uid://5a5byfd4w7ew" path="res://assets/MasterTilesetTinyt.png" id="3_6hv7n"]
+[ext_resource type="Texture2D" uid="uid://bq2sxnvlefkeo" path="res://assets/Cooper_falling.png" id="3_xuiey"]
 [ext_resource type="Texture2D" uid="uid://b0ty8urj88n7g" path="res://assets/finishFlag.png" id="4_k5hyf"]
+[ext_resource type="Texture2D" uid="uid://cghr4fqqyxpd8" path="res://assets/Cooper_idle.png" id="4_ma1iw"]
+[ext_resource type="Texture2D" uid="uid://dmmomiy81jnny" path="res://assets/Cooper_jump.png" id="5_enw1t"]
 [ext_resource type="Script" uid="uid://b0wiuy1sj0c2s" path="res://Scenes/flag_area_2d.gd" id="5_xp55e"]
+[ext_resource type="Texture2D" uid="uid://bp1ekrgxpl6jf" path="res://assets/Cooper_walking.png" id="6_3t7nx"]
 [ext_resource type="Script" uid="uid://bls0ma7w114dq" path="res://Scripts/black_bar.gd" id="7_l2b43"]
 [ext_resource type="Texture2D" uid="uid://c4v25lcn2gnpr" path="res://assets/blackBar_crack.png" id="8_8of63"]
 [ext_resource type="Texture2D" uid="uid://6w55ag6xblen" path="res://assets/PressAltToRun.png" id="9_l2b43"]
@@ -13,6 +16,91 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_emsnq"]
 radius = 18.0
 height = 47.500122
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4n58"]
+atlas = ExtResource("4_ma1iw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlc78"]
+atlas = ExtResource("4_ma1iw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d800m"]
+atlas = ExtResource("4_ma1iw")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0vg0"]
+atlas = ExtResource("4_ma1iw")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtgsu"]
+atlas = ExtResource("6_3t7nx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvo40"]
+atlas = ExtResource("6_3t7nx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnypn"]
+atlas = ExtResource("6_3t7nx")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iudpt"]
+atlas = ExtResource("6_3t7nx")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ruqtc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_xuiey")
+}],
+"loop": 1,
+"name": &"fall",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4n58")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jlc78")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d800m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0vg0")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_enw1t")
+}],
+"loop": 1,
+"name": &"jump",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtgsu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvo40")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnypn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iudpt")
+}],
+"loop": 1,
+"name": &"walking",
+"speed": 4.0
+}]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6hv7n"]
 texture = ExtResource("3_6hv7n")
@@ -135,10 +223,9 @@ physics_interpolation_mode = 1
 position = Vector2(2.2888184e-05, -0.2500534)
 shape = SubResource("CapsuleShape2D_emsnq")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1144267882]
-position = Vector2(2.2888184e-05, 0.4999771)
-scale = Vector2(0.29687536, 0.3789059)
-texture = ExtResource("2_6hv7n")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1062903926]
+sprite_frames = SubResource("SpriteFrames_ruqtc")
+animation = &"fall"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=390226633]
 texture_filter = 1

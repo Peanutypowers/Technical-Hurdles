@@ -36,6 +36,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		$AnimatedSprite2D.play("walking")
+		$AnimatedSprite2D.flip_h = false
 
 		
 	if $".".position.y > 1200:
