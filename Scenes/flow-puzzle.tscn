@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dhxexw1eco51j"]
 
 [ext_resource type="Script" uid="uid://ca6wycfl8bkuj" path="res://Scripts/flow_source.gd" id="1_2urg0"]
+[ext_resource type="Script" uid="uid://13cox35g10ev" path="res://Scenes/flow_puzzle.gd" id="1_ifoe5"]
 [ext_resource type="Texture2D" uid="uid://cbj1pxynuc1hv" path="res://assets/Cooper1.png" id="1_npav3"]
 [ext_resource type="Script" uid="uid://bef25qwtvhpv" path="res://Scripts/pipe.gd" id="2_1tef5"]
 [ext_resource type="Script" uid="uid://c0h1t2tk4nhii" path="res://Scripts/flow-sink-1.gd" id="3_87rtb"]
@@ -19,6 +20,7 @@ size = Vector2(100, 100)
 size = Vector2(100, 100)
 
 [node name="FlowPuzzle" type="Node2D" unique_id=1137744596]
+script = ExtResource("1_ifoe5")
 metadata/flow_frequency = 3000
 
 [node name="Background" type="TextureRect" parent="." unique_id=1260804067]
