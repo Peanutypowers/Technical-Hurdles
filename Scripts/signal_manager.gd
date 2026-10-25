@@ -2,7 +2,9 @@ extends Node2D
 
 signal progress_bar_broken
 
-
+var board = false
+var wave = false
+var flow = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

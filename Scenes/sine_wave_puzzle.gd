@@ -31,7 +31,9 @@ func _process(_delta: float) -> void:
 	
 	if box and tri and sin0:
 		# win
-		print("win")
-		emit_signal("game_won", "wave")
-		get_node("/root/Signal Manager").visible = true
-		get_node("/root/SineWavePuzzle").free()
+		SceneManager.change_scene("res://Scenes/Platformer2.tscn")
+		#print("win")
+		#emit_signal("game_won", "wave")
+		#get_node("/root/Signal Manager").visible = true
+		#get_node("/root/Signal Manager").wave = true
+		#get_node("/root/SineWavePuzzle").free()

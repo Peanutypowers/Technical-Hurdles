@@ -112,8 +112,9 @@ func _on_tile_pressed(num, row, col):
 			if(board[r][c].num != 0 and board[r][c].num != arr[r * board_size + c]):
 				return
 	game_state = GAME_STATES.WON
-	emit_signal("game_won", "board")
-	get_node("/root/Signal Manager").visible = true
+	
+	SceneManager.change_scene("res://Scenes/Platformer2.tscn")
+	
 	get_node("/root/board").free()
 	print("you won1!")
 
