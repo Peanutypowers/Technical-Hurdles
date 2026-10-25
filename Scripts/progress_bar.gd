@@ -16,8 +16,11 @@ var start_timer = false
 var new_timer = Timer.new()
 var cooper_image_2_bool = false
 
+var oneshot3 = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	oneshot3 = false
 	var progress_collider = get_node("Area2D")
 	add_child(new_timer)
 	new_timer.timeout.connect(_on_timer_timeout)
@@ -33,10 +36,11 @@ func _process(delta: float) -> void:
 		cooper_image_2.emit()
 		cooper_image_2_bool = true
 	
-	if cooper_image_2_bool:
+	if cooper_image_2_bool && oneshot3 == false:
 		print("cooper 3")
 		new_timer.start(1)
 		cooper_image_2_bool = false
+		oneshot3 == true
 		
 	
 	if size.x > 511:
